@@ -4,7 +4,7 @@ import { ImageBackground, View } from 'react-native'
 import BG from '@assets/imgs/bg.png'
 import { EyeIcon } from 'lucide-react-native'
 
-import { Box, TextInput } from '@components'
+import { Box, CustomButton, TextInput } from '@components'
 import { themeExtracted } from '@theme'
 
 export function LoginScreen() {
@@ -17,20 +17,26 @@ export function LoginScreen() {
       imageStyle={{ resizeMode: 'cover' }}
     >
       <Box>
-        <TextInput placeholder="Nome" />
+        <View className="flex-grow justify-center">
+          <TextInput label="Nome" />
 
-        <View className="h-5" />
+          <View className="h-5" />
 
-        <TextInput
-          placeholder="Senha"
-          rightComponent={
-            <EyeIcon
-              size={24}
-              fill={colors.gray[100]}
-              color={colors.gray[900]}
-            />
-          }
-        />
+          <TextInput
+            label="Senha"
+            rightComponent={
+              <EyeIcon
+                size={24}
+                fill={colors.gray[100]}
+                color={colors.gray[900]}
+              />
+            }
+          />
+        </View>
+
+        <View className="pb-7" />
+
+        <CustomButton title="Entrar" />
       </Box>
     </ImageBackground>
   )
