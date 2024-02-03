@@ -29,7 +29,6 @@ export function Box({ scrollable = false, style, dark, children }: Props) {
             {
               flex: 1,
               justifyContent: 'center',
-              alignItems: 'center',
               paddingHorizontal: 24,
             },
             style,
