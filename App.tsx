@@ -1,6 +1,7 @@
-import { LoginScreen } from '@screens'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
+
+import { LoginScreen } from '@screens'
 
 export default function App() {
   return (
