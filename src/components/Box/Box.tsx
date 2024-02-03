@@ -5,10 +5,13 @@ interface Props {
   scrollable?: boolean
   children: React.ReactNode
   style?: reactNative.ViewStyle
+  dark?: boolean
 }
 
-export function Box({ scrollable = false, style, children }: Props) {
+export function Box({ scrollable = false, style, dark, children }: Props) {
   const Container = scrollable ? reactNative.ScrollView : reactNative.View
+
+  const bgColor = dark ? 'black' : 'bg-white'
 
   return (
     <reactNative.KeyboardAvoidingView
@@ -16,14 +19,19 @@ export function Box({ scrollable = false, style, children }: Props) {
       behavior={reactNative.Platform.OS === 'ios' ? 'padding' : 'height'}
     >
       <Container
-        style={{ flex: 1, backgroundColor: 'white' }}
+        style={{ flex: 1, backgroundColor: bgColor }}
         bounces={false}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ flexGrow: 1 }}
       >
         <reactNative.View
           style={[
-            { flex: 1, justifyContent: 'center', alignItems: 'center' },
+            {
+              flex: 1,
+              justifyContent: 'center',
+              alignItems: 'center',
+              paddingHorizontal: 24,
+            },
             style,
           ]}
         >
