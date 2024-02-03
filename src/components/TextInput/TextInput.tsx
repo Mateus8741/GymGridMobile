@@ -34,7 +34,7 @@ export function TextInput({
       <Pressable onPress={focusInput}>
         {label && <Text className="text-text-400 mb-2 text-base">{label}</Text>}
         <View
-          className={`flex-row border-b-[1px] rounded-md items-center ${
+          className={`flex-row w-full border-b-[1px] rounded-md items-center ${
             errorMessage ? 'border-error-600' : 'border-lemon-300'
           }`}
         >
@@ -42,14 +42,16 @@ export function TextInput({
             <View className="mx-2 justify-center">{leftComponent}</View>
           )}
           <RNTextInput
-            className="w-full py-2 px-3 text-white"
+            className="py-2 px-3 text-white"
             placeholderTextColor="gray"
             autoCapitalize="none"
             ref={inputRef}
             style={$TextInputStyle}
             {...rnTextInputProps}
           />
-          {rightComponent && <View>{rightComponent}</View>}
+          {rightComponent && (
+            <View className="mx-4 justify-center">{rightComponent}</View>
+          )}
         </View>
         {errorMessage && (
           <Text className="text-error-600 text-xs font-semiBold mt-1">
