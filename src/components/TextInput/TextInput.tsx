@@ -1,18 +1,18 @@
-import React, { ReactElement, useRef } from 'react';
+import React, { ReactElement, useRef } from 'react'
 import {
   Pressable,
   TextInput as RNTextInput,
   TextInputProps as RNTextInputProps,
   Text,
   View,
-} from 'react-native';
+} from 'react-native'
 
 export interface TextInputProps extends RNTextInputProps {
-  label?: string;
-  rightComponent?: ReactElement;
-  leftComponent?: ReactElement;
-  errorMessage?: string;
-  moreClassName?: string;
+  label?: string
+  rightComponent?: ReactElement
+  leftComponent?: ReactElement
+  errorMessage?: string
+  moreClassName?: string
 }
 
 export function TextInput({
@@ -23,10 +23,10 @@ export function TextInput({
   moreClassName,
   ...rnTextInputProps
 }: TextInputProps) {
-  const inputRef = useRef<RNTextInput>(null);
+  const inputRef = useRef<RNTextInput>(null)
 
   function focusInput() {
-    inputRef.current?.focus();
+    inputRef.current?.focus()
   }
 
   return (
@@ -34,22 +34,22 @@ export function TextInput({
       <Pressable onPress={focusInput}>
         {label && <Text className="text-text-400 mb-2 text-base">{label}</Text>}
         <View
-          className={`flex-row border-[1px] rounded-md items-center ${
-            errorMessage ? 'border-error-600' : 'border-[#d2d2d255]'
-          }`}>
+          className={`flex-row border-b-[1px] rounded-md items-center ${
+            errorMessage ? 'border-error-600' : 'border-lemon-300'
+          }`}
+        >
           {leftComponent && (
             <View className="mx-2 justify-center">{leftComponent}</View>
           )}
           <RNTextInput
-            className="w-full py-2 px-3 text-text-500 placeholder-text-400"
+            className="w-full py-2 px-3 text-white"
+            placeholderTextColor="gray"
             autoCapitalize="none"
             ref={inputRef}
             style={$TextInputStyle}
             {...rnTextInputProps}
           />
-          {rightComponent && (
-            <View className="mx-4 justify-center">{rightComponent}</View>
-          )}
+          {rightComponent && <View>{rightComponent}</View>}
         </View>
         {errorMessage && (
           <Text className="text-error-600 text-xs font-semiBold mt-1">
@@ -58,11 +58,11 @@ export function TextInput({
         )}
       </Pressable>
     </View>
-  );
+  )
 }
 
 const $TextInputStyle = {
   flexGrow: 1,
   flexShrink: 1,
   padding: 0,
-};
+}
