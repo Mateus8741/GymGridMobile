@@ -11,6 +11,7 @@ import {
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 
+import { Loading } from '@components'
 import { OnboardingScreen } from '@screens'
 
 export default function App() {
@@ -21,10 +22,6 @@ export default function App() {
     Montserrat_700Bold,
   })
 
-  if (!fontsLoaded) {
-    return null
-  }
-
   return (
     <SafeAreaProvider>
       <GestureHandlerRootView style={{ flex: 1 }}>
@@ -33,8 +30,7 @@ export default function App() {
           backgroundColor="transparent"
           translucent
         />
-        {/* <LoginScreen /> */}
-        <OnboardingScreen />
+        {fontsLoaded ? <OnboardingScreen /> : <Loading />}
       </GestureHandlerRootView>
     </SafeAreaProvider>
   )
