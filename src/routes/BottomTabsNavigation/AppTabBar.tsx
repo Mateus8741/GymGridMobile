@@ -77,6 +77,7 @@ export function AppTabBar({
               color={isFocused ? colors.lemon[300] : colors.gray[300]}
               name={isFocused ? tabItem.icon.focused : tabItem.icon.unfocused}
               size={20}
+              entering={animation || undefined}
             />
             {isFocused && (
               <Animated.Text
