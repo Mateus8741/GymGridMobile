@@ -28,6 +28,13 @@ module.exports = {
           400: '#FF3B30',
         },
       },
+
+      fontFamily: {
+        regular: 'Montserrat_400Regular',
+        medium: 'Montserrat_400Medium',
+        semiBold: 'Montserrat_700SemiBold',
+        bold: 'Montserrat_400Bold',
+      },
     },
   },
   plugins: [],
