@@ -1,3 +1,8 @@
-export * from './LoginScreen/LoginScreen'
-export * from './OnboardingScreen/OnboardingScreen'
+/* eslint-disable prettier/prettier */
+export * from './Auth/LoginScreen/LoginScreen'
+export * from './Auth/OnboardingScreen/OnboardingScreen'
+
+export * from './App/EvolutionScreen/EvolutionScreen'
+export * from './App/HistoryScreen/HistoryScreen'
+export * from './App/HomeScreen/HomeScreen'
 

@@ -12,7 +12,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 
 import { Loading } from '@components'
-import { OnboardingScreen } from '@screens'
+import { Routes } from '@routes'
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -30,7 +30,7 @@ export default function App() {
           backgroundColor="transparent"
           translucent
         />
-        {fontsLoaded ? <OnboardingScreen /> : <Loading />}
+        {fontsLoaded ? <Routes /> : <Loading />}
       </GestureHandlerRootView>
     </SafeAreaProvider>
   )
