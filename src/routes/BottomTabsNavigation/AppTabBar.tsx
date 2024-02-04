@@ -61,7 +61,7 @@ export function AppTabBar({
           <TouchableOpacity
             key={route.key}
             activeOpacity={1}
-            className="items-center"
+            className="flex-row justify-center items-center gap-x-3"
             accessibilityRole="button"
             accessibilityState={isFocused ? { selected: true } : {}}
             accessibilityLabel={options.tabBarAccessibilityLabel}
@@ -75,13 +75,14 @@ export function AppTabBar({
               name={isFocused ? tabItem.icon.focused : tabItem.icon.unfocused}
               size={20}
             />
-            <Text
-              className={`font-semiBold mt-1 text-sm text-center ${
-                isFocused ? 'text-lemon-300' : 'text-gray-300'
-              }`}
-            >
-              {tabItem.label}
-            </Text>
+            {isFocused && (
+              <Text
+                className="text-xs font-bold"
+                style={{ color: colors.lemon[300] }}
+              >
+                {tabItem.label}
+              </Text>
+            )}
           </TouchableOpacity>
         )
       })}
