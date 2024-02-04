@@ -1,25 +1,20 @@
 import React from 'react'
-import { FlatList, Image } from 'react-native'
 
 import { onboarding } from '@utils'
+import AppIntroSlider from 'react-native-app-intro-slider'
+
+import { Onboarding } from '@components'
 
 export function OnboardingScreen() {
   return (
-    <FlatList
+    <AppIntroSlider
       data={onboarding}
-      renderItem={({ item }) => (
-        <Image
-          source={item.image}
-          resizeMode="cover"
-          style={{ width: '100%', height: '100%' }}
-          alt="Onboarding Images"
-        />
-      )}
-      keyExtractor={(item) => item.id}
-      horizontal
-      pagingEnabled
-      showsHorizontalScrollIndicator={false}
-      contentContainerStyle={{ flex: 1 }}
+      renderItem={({ item }) => <Onboarding item={item} />}
+      keyExtractor={(item) => item.key}
+      showNextButton
+      showSkipButton
+      dotStyle={{ backgroundColor: 'rgba(255, 255, 255, 0.5)' }}
+      activeDotStyle={{ backgroundColor: 'rgba(255, 255, 255, 1)' }}
     />
   )
 }
