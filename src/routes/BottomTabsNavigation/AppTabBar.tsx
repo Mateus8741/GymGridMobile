@@ -1,8 +1,9 @@
 import React from 'react'
-import { Text, TouchableOpacity, View } from 'react-native'
+import { TouchableOpacity, View } from 'react-native'
 
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs'
 import { useShadowProps } from '@utils'
+import Animated, { BounceIn } from 'react-native-reanimated'
 
 import { CustonIcons } from '@components'
 import { useAppSafeArea } from '@hooks'
@@ -29,6 +30,8 @@ export function AppTabBar({
         const { options } = descriptors[route.key]
 
         const isFocused = state.index === index
+
+        const animation = isFocused && BounceIn
 
         const onPress = () => {
           const event = navigation.emit({
@@ -76,12 +79,13 @@ export function AppTabBar({
               size={20}
             />
             {isFocused && (
-              <Text
+              <Animated.Text
                 className="text-xs font-bold"
                 style={{ color: colors.lemon[300] }}
+                entering={animation || undefined}
               >
                 {tabItem.label}
-              </Text>
+              </Animated.Text>
             )}
           </TouchableOpacity>
         )
