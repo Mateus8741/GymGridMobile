@@ -31,9 +31,9 @@ module.exports = {
 
       fontFamily: {
         regular: 'Montserrat_400Regular',
-        medium: 'Montserrat_400Medium',
-        semiBold: 'Montserrat_700SemiBold',
-        bold: 'Montserrat_400Bold',
+        medium: 'Montserrat_500Medium',
+        semiBold: 'Montserrat_600SemiBold',
+        bold: 'Montserrat_700Bold',
       },
     },
   },
