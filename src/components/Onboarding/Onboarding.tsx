@@ -19,7 +19,7 @@ export function Onboarding({ item }: OnboardingProps) {
       className="justify-center"
     >
       <View className="px-6">
-        <Text className="text-white font-bold text-4xl">{item.title}</Text>
+        <Text className="text-white font-700 text-4xl">{item.title}</Text>
         <Text className="text-white font-normal text-lg mt-6">
           {item.subtitle}
         </Text>

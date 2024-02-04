@@ -18,7 +18,7 @@ export function LoginScreen() {
     >
       <Box>
         <View className="flex-grow justify-center">
-          <Text className="text-3xl font-bold text-white text-left mb-3">
+          <Text className="text-3xl font-700 text-white text-left mb-3">
             Faça login e aproveite seu treino
           </Text>
 

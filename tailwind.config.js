@@ -30,10 +30,10 @@ module.exports = {
       },
 
       fontFamily: {
-        regular: 'Montserrat_400Regular',
-        medium: 'Montserrat_500Medium',
-        semiBold: 'Montserrat_600SemiBold',
-        bold: 'Montserrat_700Bold',
+        400: 'Montserrat_400Regular',
+        500: 'Montserrat_500Medium',
+        600: 'Montserrat_600SemiBold',
+        700: 'Montserrat_700Bold',
       },
     },
   },

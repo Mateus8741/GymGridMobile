@@ -18,7 +18,7 @@ export function CustomButton({ title, isLoading, isDisable, ...props }: Props) {
       {isLoading ? (
         <reactNative.ActivityIndicator size="small" color="#FFF" />
       ) : (
-        <reactNative.Text className="text-white font-bold text-lg">
+        <reactNative.Text className="text-black font-700 text-base">
           {title}
         </reactNative.Text>
       )}

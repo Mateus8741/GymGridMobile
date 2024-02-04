@@ -15,4 +15,11 @@ export const onboarding = [
       'Acesse número de séries, repetições e evoluções de carga na Gym Buddy.',
     image: OB2,
   },
+  {
+    key: 'three',
+    title: 'Tenha acesso ao seu plano de treino',
+    subtitle:
+      'Veja todos os exercícios que precisam ser realizados e suas espeficicações.',
+    image: OB2,
+  },
 ]
