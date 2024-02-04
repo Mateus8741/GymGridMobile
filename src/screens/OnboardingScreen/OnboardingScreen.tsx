@@ -14,7 +14,12 @@ export function OnboardingScreen() {
       showNextButton
       showSkipButton
       dotStyle={{ backgroundColor: 'rgba(255, 255, 255, 0.5)' }}
-      activeDotStyle={{ backgroundColor: 'rgba(255, 255, 255, 1)' }}
+      activeDotStyle={{
+        backgroundColor: 'rgba(255, 255, 255, 1)',
+        width: 50,
+        height: 10,
+        borderRadius: 20,
+      }}
     />
   )
 }
