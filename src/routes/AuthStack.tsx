@@ -4,7 +4,7 @@ import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import {
-    LoginScreen,
+  LoginScreen, OnboardingScreen,
 } from '@screens';
 
 export type AuthStackParamList = {
@@ -18,13 +18,13 @@ export function AuthStack() {
 
   return (
     <Navigator
-      initialRouteName="LoginScreen"
+      initialRouteName="OnboardingScreen"
       screenOptions={{
         headerShown: false,
         fullScreenGestureEnabled: true,
       }}>
+      <Screen name="OnboardingScreen" component={OnboardingScreen} />
       <Screen name="LoginScreen" component={LoginScreen} />
-      <Screen name="OnboardingScreen" component={() => null} />
     </Navigator>
   );
 }

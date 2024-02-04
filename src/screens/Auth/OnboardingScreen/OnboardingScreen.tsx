@@ -6,8 +6,15 @@ import { onboarding } from '@utils'
 import AppIntroSlider from 'react-native-app-intro-slider'
 
 import { CustomButton, Onboarding } from '@components'
+import { AuthScreenProps } from '@routes'
 
-export function OnboardingScreen() {
+export function OnboardingScreen({
+  navigation,
+}: AuthScreenProps<'OnboardingScreen'>) {
+  function handleDone() {
+    navigation.navigate('LoginScreen')
+  }
+
   return (
     <AppIntroSlider
       data={onboarding}
@@ -20,7 +27,7 @@ export function OnboardingScreen() {
       showSkipButton={false}
       renderDoneButton={() => (
         <View className="absolute bottom-40 right-48 w-40">
-          <CustomButton title="Vamos lá" />
+          <CustomButton title="Vamos lá" onPress={handleDone} />
         </View>
       )}
       dotStyle={{ backgroundColor: 'rgba(255, 255, 255, 0.5)' }}
