@@ -40,4 +40,11 @@ export const mapScreenToProps: Record<
       unfocused: 'ArrowUpWideNarrow',
     },
   },
+  ProfileScreen: {
+    label: 'Perfil',
+    icon: {
+      focused: 'CircleUserRound',
+      unfocused: 'CircleUserRound',
+    },
+  },
 }

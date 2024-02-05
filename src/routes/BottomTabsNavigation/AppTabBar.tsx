@@ -23,7 +23,7 @@ export function AppTabBar({
 
   return (
     <View
-      className="flex-row pt-3 bg-gray-900 dark:bg-gray-900"
+      className="flex-row pt-3 px-3 bg-gray-900 dark:bg-gray-900"
       style={[{ paddingBottom: bottom }, useShadowProps()]}
     >
       {state.routes.map((route, index) => {
