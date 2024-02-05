@@ -23,7 +23,7 @@ export function AppTabBar({
 
   return (
     <View
-      className="flex-row pt-3 px-3 bg-gray-900 dark:bg-gray-900"
+      className="flex-row bg-gray-900 dark:bg-gray-900"
       style={[{ paddingBottom: bottom }, useShadowProps()]}
     >
       {state.routes.map((route, index) => {
@@ -64,7 +64,11 @@ export function AppTabBar({
           <TouchableOpacity
             key={route.key}
             activeOpacity={1}
-            className="flex-row justify-center items-center gap-x-3"
+            className={
+              isFocused
+                ? 'flex-row justify-center items-center pt-3 px-5 border-t-2 border-lemon-300 dark:border-lemon-300'
+                : 'pt-3 px-3 justify-center items-center'
+            }
             accessibilityRole="button"
             accessibilityState={isFocused ? { selected: true } : {}}
             accessibilityLabel={options.tabBarAccessibilityLabel}
@@ -81,7 +85,7 @@ export function AppTabBar({
             />
             {isFocused && (
               <Animated.Text
-                className="text-xs font-bold"
+                className="text-xs ml-3 font-500"
                 style={{ color: colors.lemon[300] }}
                 entering={animation || undefined}
               >
