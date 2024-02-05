@@ -66,8 +66,8 @@ export function AppTabBar({
             activeOpacity={1}
             className={
               isFocused
-                ? 'flex-row justify-center items-center pt-3 px-5 border-t-2 border-lemon-300 dark:border-lemon-300'
-                : 'pt-3 px-3 justify-center items-center'
+                ? 'flex-row justify-center items-center pt-3 border-t-2 border-lemon-300'
+                : 'pt-3 justify-center items-center'
             }
             accessibilityRole="button"
             accessibilityState={isFocused ? { selected: true } : {}}
@@ -80,8 +80,8 @@ export function AppTabBar({
             <CustonIcons
               color={isFocused ? colors.lemon[300] : colors.gray[300]}
               name={isFocused ? tabItem.icon.focused : tabItem.icon.unfocused}
-              size={20}
               entering={animation || undefined}
+              size={20}
             />
             {isFocused && (
               <Animated.Text
