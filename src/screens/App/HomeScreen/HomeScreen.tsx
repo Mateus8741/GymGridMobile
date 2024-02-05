@@ -1,12 +1,16 @@
 import React from 'react'
 import { Text } from 'react-native'
 
-import { Box } from '@components'
+import { Box, Header } from '@components'
 
 export function HomeScreen() {
   return (
-    <Box>
-      <Text className="text-white">HomeScreen</Text>
-    </Box>
+    <>
+      <Header />
+
+      <Box>
+        <Text className="text-white">HomeScreen</Text>
+      </Box>
+    </>
   )
 }
