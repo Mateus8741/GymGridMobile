@@ -1,18 +1,15 @@
-import { useColorScheme } from 'react-native'
-
 export function useShadowProps() {
-  function getShadowProps(colorScheme: string | null | undefined) {
+  function getShadowProps() {
     return {
       elevation: 10,
-      shadowColor: colorScheme === 'dark' ? '#FFF' : '#000',
+      shadowColor: '#FFF',
       shadowOpacity: 0.05,
       shadowRadius: 12,
       shadowOffset: { width: 0, height: -3 },
     }
   }
 
-  const deviceColorScheme = useColorScheme()
-  const shadowProps = getShadowProps(deviceColorScheme)
+  const shadowProps = getShadowProps()
 
   return shadowProps
 }
