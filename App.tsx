@@ -7,7 +7,6 @@ import {
   Montserrat_700Bold,
   useFonts,
 } from '@expo-google-fonts/montserrat'
-import { StatusBar } from 'expo-status-bar'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 
@@ -25,7 +24,6 @@ export default function App() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <SafeAreaProvider>
-        <StatusBar style="auto" backgroundColor="transparent" translucent />
         {fontsLoaded ? <Routes /> : <Loading />}
       </SafeAreaProvider>
     </GestureHandlerRootView>
