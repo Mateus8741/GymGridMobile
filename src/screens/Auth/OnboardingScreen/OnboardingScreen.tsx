@@ -8,14 +8,18 @@ import { onboarding } from '@utils'
 import AppIntroSlider from 'react-native-app-intro-slider'
 
 import { CustomButton, Onboarding } from '@components'
+import { useResetNavigation } from '@hooks'
 
 export function OnboardingScreen() {
   const { navigate } = useNavigation()
 
   const { setOnboard } = useOnboardStorage()
 
+  const { reset } = useResetNavigation()
+
   function handleDone() {
     navigate('LoginScreen')
+    reset()
     setOnboard(true)
   }
 
