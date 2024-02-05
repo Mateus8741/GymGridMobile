@@ -19,7 +19,9 @@ export function OnboardingScreen() {
 
   function handleDone() {
     navigate('LoginScreen')
-    reset()
+    reset({
+      routeName: 'LoginScreen',
+    })
     setOnboard(true)
   }
 
