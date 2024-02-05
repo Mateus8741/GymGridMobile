@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
 export * from './Box/Box'
+export * from './Cards/Cards'
 export * from './CustomButton/CustomButton'
 export * from './Header/Header'
 export * from './Icons/CustonIcons'

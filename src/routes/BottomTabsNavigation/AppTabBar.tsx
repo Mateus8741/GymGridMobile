@@ -23,7 +23,7 @@ export function AppTabBar({
 
   return (
     <View
-      className="flex-row bg-gray-900 dark:bg-gray-900"
+      className="flex-row bg-bgColor-800 dark:bg-gray-900"
       style={[{ paddingBottom: bottom }, useShadowProps()]}
     >
       {state.routes.map((route, index) => {
@@ -78,7 +78,7 @@ export function AppTabBar({
             style={{ flex: 1 }}
           >
             <CustonIcons
-              color={isFocused ? colors.lemon[300] : colors.gray[300]}
+              color={isFocused ? colors.lemon[300] : colors.gray.g300}
               name={isFocused ? tabItem.icon.focused : tabItem.icon.unfocused}
               entering={animation || undefined}
               size={20}

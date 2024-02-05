@@ -23,7 +23,7 @@ export function Box({ scrollable = false, style, children }: Props) {
       behavior={reactNative.Platform.OS === 'ios' ? 'padding' : 'height'}
     >
       <Container
-        style={{ flex: 1, backgroundColor: colors.bgColor[800] }}
+        style={{ flex: 1, backgroundColor: colors.gray.g900 }}
         bounces={false}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ flexGrow: 1 }}
@@ -33,7 +33,7 @@ export function Box({ scrollable = false, style, children }: Props) {
             {
               flex: 1,
               justifyContent: 'center',
-              paddingHorizontal: 24,
+              paddingHorizontal: 20,
               paddingTop: top,
               paddingBottom: bottom,
             },

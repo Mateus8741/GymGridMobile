@@ -1,7 +1,7 @@
 import React from 'react'
-import { Text } from 'react-native'
+import { View } from 'react-native'
 
-import { Box, Header } from '@components'
+import { Box, Cards, Header } from '@components'
 
 export function HomeScreen() {
   return (
@@ -9,7 +9,15 @@ export function HomeScreen() {
       <Header />
 
       <Box>
-        <Text className="text-white">HomeScreen</Text>
+        <View className="flex-1 flex-row flex-wrap justify-between">
+          <Cards />
+
+          <Cards />
+
+          <Cards />
+
+          <Cards />
+        </View>
       </Box>
     </>
   )
