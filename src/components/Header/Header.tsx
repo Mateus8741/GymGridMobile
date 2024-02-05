@@ -1,5 +1,5 @@
 import React from 'react'
-import { StatusBar, Text, View } from 'react-native'
+import { Image, StatusBar, Text, View } from 'react-native'
 
 import { useAppSafeArea } from '@hooks'
 
@@ -31,9 +31,13 @@ export function Header() {
             <Text className="text-white text-xl font-bold">Matt</Text>
           </View>
 
-          <View className="flex-col items-right">
-            <View className="bg-white rounded-full p-2">
-              <Text className="text-black text-xl">👋</Text>
+          <View className="flex-col border-2 rounded-full border-lemon-400">
+            <View className="items-center justify-center w-16 h-16 rounded-full">
+              <Image
+                source={{ uri: 'https://i.pravatar.cc/800' }}
+                className="w-16 h-16 rounded-full"
+                alt="Profile Picture"
+              />
             </View>
           </View>
         </View>
