@@ -11,12 +11,6 @@ export function HomeScreen() {
       <Box>
         <View className="flex-1 flex-row flex-wrap justify-between">
           <Cards />
-
-          <Cards />
-
-          <Cards />
-
-          <Cards />
         </View>
       </Box>
     </>
