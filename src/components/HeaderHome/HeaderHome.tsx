@@ -3,7 +3,7 @@ import { Image, StatusBar, Text, View } from 'react-native'
 
 import { useAppSafeArea } from '@hooks'
 
-export function Header() {
+export function HeaderHome() {
   const { top } = useAppSafeArea()
 
   return (
