@@ -1,5 +1,4 @@
 /* eslint-disable camelcase */
-import { StatusBar } from 'react-native'
 
 import {
   Montserrat_400Regular,
@@ -8,6 +7,7 @@ import {
   Montserrat_700Bold,
   useFonts,
 } from '@expo-google-fonts/montserrat'
+import { StatusBar } from 'expo-status-bar'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 
@@ -25,11 +25,7 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <GestureHandlerRootView style={{ flex: 1 }}>
-        <StatusBar
-          barStyle="light-content"
-          backgroundColor="transparent"
-          translucent
-        />
+        <StatusBar style="auto" backgroundColor="transparent" translucent />
         {fontsLoaded ? <Routes /> : <Loading />}
       </GestureHandlerRootView>
     </SafeAreaProvider>
