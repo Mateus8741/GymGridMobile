@@ -23,11 +23,11 @@ export default function App() {
   })
 
   return (
-    <SafeAreaProvider>
-      <GestureHandlerRootView style={{ flex: 1 }}>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <SafeAreaProvider>
         <StatusBar style="auto" backgroundColor="transparent" translucent />
         {fontsLoaded ? <Routes /> : <Loading />}
-      </GestureHandlerRootView>
-    </SafeAreaProvider>
+      </SafeAreaProvider>
+    </GestureHandlerRootView>
   )
 }

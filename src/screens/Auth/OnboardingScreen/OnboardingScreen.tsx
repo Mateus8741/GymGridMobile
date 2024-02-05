@@ -2,17 +2,21 @@ import React from 'react'
 import { Image, View } from 'react-native'
 
 import AR from '@assets/arrowRight.png'
+import { useOnboardStorage } from '@contexts'
+import { useNavigation } from '@react-navigation/native'
 import { onboarding } from '@utils'
 import AppIntroSlider from 'react-native-app-intro-slider'
 
 import { CustomButton, Onboarding } from '@components'
-import { AuthScreenProps } from '@routes'
 
-export function OnboardingScreen({
-  navigation,
-}: AuthScreenProps<'OnboardingScreen'>) {
+export function OnboardingScreen() {
+  const { navigate } = useNavigation()
+
+  const { setOnboard } = useOnboardStorage()
+
   function handleDone() {
-    navigation.navigate('LoginScreen')
+    navigate('LoginScreen')
+    setOnboard(true)
   }
 
   return (

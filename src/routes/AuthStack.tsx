@@ -1,6 +1,7 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
 
+import { useOnboardStorage } from '@contexts';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import {
@@ -16,9 +17,13 @@ export function AuthStack() {
   const { Navigator, Screen } =
     createNativeStackNavigator<AuthStackParamList>();
 
+    const {onboard} = useOnboardStorage();
+
+    const initialRoute = onboard ? 'LoginScreen' : 'OnboardingScreen';
+
   return (
     <Navigator
-      initialRouteName="OnboardingScreen"
+      initialRouteName={initialRoute}
       screenOptions={{
         headerShown: false,
         fullScreenGestureEnabled: true,

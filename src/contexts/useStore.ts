@@ -1,30 +1,29 @@
-import { EmployerDTO } from '@DTOS'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { create } from 'zustand'
 import { createJSONStorage, persist } from 'zustand/middleware'
 
-type EmployerStore = {
-  employerStorage: EmployerDTO | null
-  setEmployer: (user: EmployerDTO) => void
-  removeEmployer: () => void
+type OnboardStore = {
+  onboard: boolean
+  setOnboard: (onboard: boolean) => void
+  resetOnboard: () => void
 }
 
-const useEmployerStore = create<EmployerStore>()(
+const useOnboardStore = create<OnboardStore>()(
   persist(
     (set) => ({
-      employerStorage: null,
-      setEmployer: (employerStorage) => set({ employerStorage }),
-      removeEmployer: () => set({ employerStorage: null }),
+      onboard: false,
+      setOnboard: (onboard) => set({ onboard }),
+      resetOnboard: () => set({ onboard: false }),
     }),
     {
-      name: 'employer-storage',
+      name: 'onboard-storage',
       storage: createJSONStorage(() => AsyncStorage),
     },
   ),
 )
 
-export function useEmployerStorage() {
-  const { employerStorage, setEmployer, removeEmployer } = useEmployerStore()
+export function useOnboardStorage() {
+  const { onboard, setOnboard, resetOnboard } = useOnboardStore()
 
-  return { employerStorage, setEmployer, removeEmployer }
+  return { onboard, setOnboard, resetOnboard }
 }
