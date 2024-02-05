@@ -1,9 +1,18 @@
+import { ImageSourcePropType } from 'react-native'
+
 import Sl1 from '@assets/Icons/arms.png'
 import Sl4 from '@assets/Icons/ass.png'
 import Sl3 from '@assets/Icons/body.png'
 import Sl2 from '@assets/Icons/legs.png'
 
-export const cardsHome = [
+export type Card = {
+  id: number
+  image: ImageSourcePropType
+  title: string
+  description: string
+}
+
+export const cardsHome: Card[] = [
   {
     id: 1,
     title: 'Treino A',
