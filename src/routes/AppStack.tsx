@@ -4,6 +4,8 @@ import React from 'react';
 import { NavigatorScreenParams } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+import { ExerciseListScreen } from '@screens';
+
 import {
   AppTabBottomTabParamList,
   AppTabNavigator,
@@ -11,6 +13,7 @@ import {
 
 export type AppStackParamList = {
   AppTabNavigator: NavigatorScreenParams<AppTabBottomTabParamList>;
+  ExerciseListScreen: undefined;
 };
 
 export function AppStack() {
@@ -24,6 +27,7 @@ export function AppStack() {
         fullScreenGestureEnabled: true,
       }}>
       <Screen name="AppTabNavigator" component={AppTabNavigator} />
+      <Screen name="ExerciseListScreen" component={ExerciseListScreen} />
     </Navigator>
   );
 }
