@@ -7,13 +7,10 @@ interface Props {
   scrollable?: boolean
   children: React.ReactNode
   style?: reactNative.ViewStyle
-  dark?: boolean
 }
 
-export function Box({ scrollable = false, style, dark, children }: Props) {
+export function Box({ scrollable = false, style, children }: Props) {
   const Container = scrollable ? reactNative.ScrollView : reactNative.View
-
-  const bgColor = dark ? 'black' : 'bg-white'
 
   const { top, bottom } = useAppSafeArea()
 
@@ -23,7 +20,7 @@ export function Box({ scrollable = false, style, dark, children }: Props) {
       behavior={reactNative.Platform.OS === 'ios' ? 'padding' : 'height'}
     >
       <Container
-        style={{ flex: 1, backgroundColor: bgColor }}
+        style={{ flex: 1, backgroundColor: 'black' }}
         bounces={false}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ flexGrow: 1 }}

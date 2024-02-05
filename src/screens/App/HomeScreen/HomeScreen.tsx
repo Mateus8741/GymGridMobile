@@ -6,7 +6,7 @@ import { Box } from '@components'
 export function HomeScreen() {
   return (
     <Box>
-      <Text>HomeScreen</Text>
+      <Text className="text-white">HomeScreen</Text>
     </Box>
   )
 }
