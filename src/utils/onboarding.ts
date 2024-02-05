@@ -1,5 +1,6 @@
 import OB1 from '@assets/imgs/Onboarding-1.png'
 import OB2 from '@assets/imgs/Onboarding-2.png'
+import OB3 from '@assets/imgs/Onboarding-3.png'
 
 export const onboarding = [
   {
@@ -20,6 +21,6 @@ export const onboarding = [
     title: 'Tenha acesso ao seu plano de treino',
     subtitle:
       'Veja todos os exercícios que precisam ser realizados e suas espeficicações.',
-    image: OB2,
+    image: OB3,
   },
 ]

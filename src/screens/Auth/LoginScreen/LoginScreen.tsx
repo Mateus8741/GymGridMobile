@@ -1,7 +1,7 @@
 import React from 'react'
 import { ImageBackground, Text, View } from 'react-native'
 
-import BG from '@assets/imgs/bg.png'
+import BG from '@assets/imgs/Onboarding-3.png'
 import { EyeIcon } from 'lucide-react-native'
 
 import { Box, CustomButton, TextInput } from '@components'
