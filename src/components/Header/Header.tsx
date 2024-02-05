@@ -7,7 +7,7 @@ export function Header() {
   const { top } = useAppSafeArea()
 
   return (
-    <View className="bg-black">
+    <View className="bg-bgColor-800">
       <View
         className="pb-4 bg-lemon-900 rounded-b-3xl"
         style={{

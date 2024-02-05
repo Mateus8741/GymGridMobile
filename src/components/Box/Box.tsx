@@ -2,6 +2,7 @@ import React from 'react'
 import * as reactNative from 'react-native'
 
 import { useAppSafeArea } from '@hooks'
+import { themeExtracted } from '@theme'
 
 interface Props {
   scrollable?: boolean
@@ -14,13 +15,15 @@ export function Box({ scrollable = false, style, children }: Props) {
 
   const { top, bottom } = useAppSafeArea()
 
+  const { colors } = themeExtracted
+
   return (
     <reactNative.KeyboardAvoidingView
       style={{ flex: 1 }}
       behavior={reactNative.Platform.OS === 'ios' ? 'padding' : 'height'}
     >
       <Container
-        style={{ flex: 1, backgroundColor: 'black' }}
+        style={{ flex: 1, backgroundColor: colors.bgColor[800] }}
         bounces={false}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ flexGrow: 1 }}
