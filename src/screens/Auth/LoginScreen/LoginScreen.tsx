@@ -1,5 +1,5 @@
 import React from 'react'
-import { ImageBackground, Text, View } from 'react-native'
+import { ImageBackground, StyleSheet, Text, View } from 'react-native'
 
 import BG from '@assets/imgs/Onboarding-3.png'
 import { EyeIcon } from 'lucide-react-native'
@@ -11,12 +11,13 @@ export function LoginScreen() {
   const { colors } = themeExtracted
 
   return (
-    <ImageBackground
-      source={BG}
-      style={{ flex: 1, justifyContent: 'center' }}
-      imageStyle={{ resizeMode: 'cover' }}
-    >
-      <Box>
+    <Box>
+      <ImageBackground
+        source={BG}
+        style={StyleSheet.absoluteFillObject}
+        imageStyle={{ resizeMode: 'cover' }}
+        className="flex-1 justify-center px-5 py-10"
+      >
         <View className="flex-grow justify-center">
           <Text className="text-3xl font-700 text-white text-left mb-3">
             Faça login e aproveite seu treino
@@ -35,8 +36,8 @@ export function LoginScreen() {
             rightComponent={
               <EyeIcon
                 size={24}
-                fill={colors.gray[100]}
-                color={colors.gray[900]}
+                fill={colors.gray.g100}
+                color={colors.gray.g900}
               />
             }
           />
@@ -45,7 +46,7 @@ export function LoginScreen() {
         <View className="pb-7" />
 
         <CustomButton title="Entrar" />
-      </Box>
-    </ImageBackground>
+      </ImageBackground>
+    </Box>
   )
 }
