@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "gymgridmobile",
-    "slug": "gymgridmobile",
+    "name": "gymgrid",
+    "slug": "gymgrid",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
