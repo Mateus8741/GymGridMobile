@@ -10,8 +10,6 @@ import { themeExtracted } from '@theme'
 export function LoginScreen() {
   const { colors } = themeExtracted
 
-  console.log(BG)
-
   return (
     <Box>
       <ImageBackground
