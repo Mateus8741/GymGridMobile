@@ -5,11 +5,8 @@ import { MONTHS } from '@utils'
 import { FlatList } from 'react-native-gesture-handler'
 
 import { Box, EvolutionMonthList, Graphic } from '@components'
-import { useAppSafeArea } from '@hooks'
 
 export function EvolutionScreen() {
-  const { bottom } = useAppSafeArea()
-
   return (
     <>
       <Box>
