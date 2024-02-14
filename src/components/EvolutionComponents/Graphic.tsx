@@ -1,25 +1,42 @@
 import React from 'react'
 import { Text, View } from 'react-native'
 
+import { isCurrentMonth } from '@utils'
+
+import { themeExtracted } from '@theme'
+
 type GraphicProps = {
   month: string
   progress: number
 }
 
 export function Graphic({ progress, month }: GraphicProps) {
-  return (
-    <View className="flex-row mb-4">
-      <Text className="text-gray-g200 text-xs">{month}</Text>
+  const { colors } = themeExtracted
 
-      <View className="flex-1 pl-2 pr-4">
-        <View className="flex-row">
-          <View
-            className="h-4 bg-gray-g200/50 rounded-full mr-1"
-            style={{ width: `${progress}%` }}
-          />
-          <Text className="text-gray-g200 text-xs">{progress}kg</Text>
+  const textStyle =
+    isCurrentMonth === month ? 'text-lemon-300' : 'text-gray-g200'
+
+  return (
+    progress > 0 && (
+      <View className="flex-row mb-4">
+        <Text className={`${textStyle} text-xs`}>{month.slice(0, 3)}</Text>
+
+        <View className="flex-1 pr-4 pl-3">
+          <View className="flex-row">
+            <View
+              className={`h-4 rounded-full mr-1`}
+              style={{
+                width: `${progress}%`,
+                backgroundColor:
+                  isCurrentMonth === month
+                    ? colors.lemon[900]
+                    : colors.gray.g200,
+              }}
+            />
+            <Text className={`${textStyle} text-xs`}>{progress}kg</Text>
+          </View>
         </View>
       </View>
-    </View>
+    )
   )
 }

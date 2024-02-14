@@ -1,13 +1,12 @@
 import React from 'react'
 import { Text, View } from 'react-native'
 
-import { isCurrentMonth } from '@utils'
+import { MONTHS } from '@utils'
+import { FlatList } from 'react-native-gesture-handler'
 
 import { Box, EvolutionMonthList, Graphic } from '@components'
 
 export function EvolutionScreen() {
-  const abrvMonth = isCurrentMonth.slice(0, 3)
-
   return (
     <Box>
       <Text className="text-white text-lg text-center mt-6 mb-4 font-700">
@@ -26,10 +25,14 @@ export function EvolutionScreen() {
         </Text>
       </View>
 
-      <Graphic month="Jan" progress={50} />
-      <Graphic month="Jan" progress={50} />
-      <Graphic month="Jan" progress={50} />
-      <Graphic month="Jan" progress={50} />
+      <FlatList
+        data={MONTHS}
+        keyExtractor={(item) => String(item)}
+        renderItem={({ item }) => (
+          <Graphic month={item} progress={Math.floor(Math.random() * 100)} />
+        )}
+        showsVerticalScrollIndicator={false}
+      />
     </Box>
   )
 }
