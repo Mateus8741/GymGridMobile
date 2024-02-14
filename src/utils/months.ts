@@ -12,3 +12,7 @@ export const MONTHS = [
   'Novembro',
   'Dezembro',
 ]
+
+export const currentMonth = new Date().getMonth()
+
+export const isCurrentMonth = MONTHS[currentMonth]

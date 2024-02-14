@@ -1,12 +1,18 @@
 import React from 'react'
 import { Text, View } from 'react-native'
 
+import { isCurrentMonth } from '@utils'
+
 import { Box, EvolutionMonthList, Graphic } from '@components'
 
 export function EvolutionScreen() {
+  const abrvMonth = isCurrentMonth.slice(0, 3)
+
   return (
     <Box>
-      <Text className="text-white text-lg text-center font-700">Evolução</Text>
+      <Text className="text-white text-lg text-center mt-6 mb-4 font-700">
+        Evolução
+      </Text>
 
       <EvolutionMonthList />
 

@@ -1,13 +1,9 @@
 import React from 'react'
 import { FlatList, Text, View } from 'react-native'
 
-import { MONTHS } from '@utils'
+import { MONTHS, isCurrentMonth } from '@utils'
 
 export function EvolutionMonthList() {
-  const currentMonth = new Date().getMonth()
-
-  const isCurrentMonth = MONTHS[currentMonth]
-
   const toggleViewStyle = (month: string) => {
     if (month === isCurrentMonth) {
       return 'border-lemon-400 bg-lemon-400'
