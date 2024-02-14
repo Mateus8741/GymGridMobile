@@ -4,15 +4,13 @@ import { Text, View } from 'react-native'
 import { MONTHS } from '@utils'
 import { FlatList } from 'react-native-gesture-handler'
 
-import { Box, EvolutionMonthList, Graphic } from '@components'
+import { Box, EvolutionMonthList, Graphic, HeaderText } from '@components'
 
 export function EvolutionScreen() {
   return (
     <>
       <Box>
-        <Text className="text-white text-lg text-center mt-6 font-700">
-          Evolução
-        </Text>
+        <HeaderText title="Evolução" />
 
         <EvolutionMonthList />
 

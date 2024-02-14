@@ -1,12 +1,12 @@
 import React from 'react'
-import { FlatList, Text } from 'react-native'
+import { FlatList } from 'react-native'
 
-import { Box, HistoryCards } from '@components'
+import { Box, HeaderText, HistoryCards } from '@components'
 
 export function HistoryScreen() {
   return (
     <Box>
-      <Text className="text-white text-lg text-center font-700">Histórico</Text>
+      <HeaderText title="Histórico" />
 
       <FlatList
         data={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
