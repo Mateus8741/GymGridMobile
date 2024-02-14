@@ -7,7 +7,7 @@ type HeaderTextProps = {
 
 export function HeaderText({ title }: HeaderTextProps) {
   return (
-    <Text className="text-white text-lg text-center mt-6 font-700">
+    <Text className="text-white uppercase text-lg text-center mt-6 font-700">
       {title}
     </Text>
   )

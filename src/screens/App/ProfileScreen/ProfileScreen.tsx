@@ -1,12 +1,11 @@
 import React from 'react'
-import { Text } from 'react-native'
 
-import { Box } from '@components'
+import { Box, HeaderText } from '@components'
 
 export function ProfileScreen() {
   return (
     <Box>
-      <Text className="text-white">ProfileScreen</Text>
+      <HeaderText title="Perfil" />
     </Box>
   )
 }
