@@ -25,14 +25,18 @@ export function ProfileScreen() {
 
   const { data: ProfileInfo } = useQuery({
     queryKey: ['profile-info', user?.user.id],
-    queryFn: () =>
-      supabase
+    queryFn: async () => {
+      const response = await supabase
         .from('profile')
         .select()
         .eq('id', user?.user.id || '')
-        .single(),
-    refetchInterval: 1000,
+        .single()
+
+      return response.data
+    },
   })
+
+  console.log(ProfileInfo)
 
   return (
     <Box style={{ paddingBottom: -bottom }}>
