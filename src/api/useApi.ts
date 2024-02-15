@@ -1,3 +1,4 @@
+import { useUserStorage } from '@contexts'
 import { supabase } from 'src/lib/supabase'
 
 export type LoginProps = {
@@ -13,6 +14,16 @@ function SignOut() {
   return supabase.auth.signOut()
 }
 
+function RefreshToken() {
+  return supabase.auth.onAuthStateChange((event, session) => {
+    if (session?.user.aud !== 'authenticated') {
+      supabase.auth.signOut()
+      // eslint-disable-next-line react-hooks/rules-of-hooks
+      useUserStorage().resetUser()
+    }
+  })
+}
+
 export function useAuthFuctions() {
-  return { Login, SignOut }
+  return { Login, SignOut, RefreshToken }
 }

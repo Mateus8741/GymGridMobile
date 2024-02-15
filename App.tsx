@@ -1,5 +1,8 @@
 /* eslint-disable camelcase */
 
+import { useEffect } from 'react'
+
+import { useAuthFuctions } from '@api'
 import {
   Montserrat_400Regular,
   Montserrat_500Medium,
@@ -23,18 +26,11 @@ export default function App() {
   })
 
   const queryClient = new QueryClient()
+  const { RefreshToken } = useAuthFuctions()
 
-  // useEffect(() => {
-  //   const { data: authListener } = supabase.auth.onAuthStateChange(
-  //     (event, session) => {
-  //       console.log('onAuthStateChange', { event, session })
-  //     },
-  //   )
-
-  //   return () => {
-  //     authListener?.subscription?.unsubscribe()
-  //   }
-  // }, [])
+  useEffect(() => {
+    RefreshToken()
+  }, [RefreshToken])
 
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
