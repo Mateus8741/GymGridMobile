@@ -1,11 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { ImageBackground, StyleSheet, Text, View } from 'react-native'
 
+import { signInWithEmail } from '@api'
 import BG from '@assets/imgs/Onboarding-3.png'
 
 import { Box, CustomButton, PasswordInput, TextInput } from '@components'
 
 export function LoginScreen() {
+  const [email, setEmail] = useState('t@t.com')
+  const [password, setPassword] = useState('0000')
+
+  function handleLogin() {
+    signInWithEmail({ email, password })
+    console.log({ email, password })
+  }
+
   return (
     <Box>
       <ImageBackground
@@ -23,16 +32,25 @@ export function LoginScreen() {
             Acesse sua conta
           </Text>
 
-          <TextInput placeholder="Nome" />
+          <TextInput
+            placeholder="E-mail"
+            keyboardType="email-address"
+            value={email}
+            onChangeText={setEmail}
+          />
 
           <View className="h-5" />
 
-          <PasswordInput placeholder="Senha" />
+          <PasswordInput
+            placeholder="Senha"
+            value={password}
+            onChangeText={setPassword}
+          />
         </View>
 
         <View className="pb-7" />
 
-        <CustomButton title="Entrar" />
+        <CustomButton title="Entrar" onPress={handleLogin} />
       </ImageBackground>
     </Box>
   )
