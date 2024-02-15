@@ -7,7 +7,7 @@ import BG from '@assets/imgs/Onboarding-3.png'
 import { Box, CustomButton, PasswordInput, TextInput } from '@components'
 
 export function LoginScreen() {
-  const [email, setEmail] = useState('t@t.com')
+  const [email, setEmail] = useState('t3@t.com')
   const [password, setPassword] = useState('0000')
 
   const { signIn } = useSignIn({ email, password })
