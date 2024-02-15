@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { ImageBackground, StyleSheet, Text, View } from 'react-native'
 
-import { signInWithEmail } from '@api'
+import { useSignIn } from '@api'
 import BG from '@assets/imgs/Onboarding-3.png'
 
 import { Box, CustomButton, PasswordInput, TextInput } from '@components'
@@ -10,9 +10,10 @@ export function LoginScreen() {
   const [email, setEmail] = useState('t@t.com')
   const [password, setPassword] = useState('0000')
 
+  const { signIn } = useSignIn({ email, password })
+
   function handleLogin() {
-    signInWithEmail({ email, password })
-    console.log({ email, password })
+    signIn()
   }
 
   return (

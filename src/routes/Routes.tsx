@@ -9,9 +9,11 @@ import { AuthStack } from './AuthStack'
 export function Routes() {
   const { user } = useUserStorage()
 
+  console.log('user', user)
+
   return (
     <NavigationContainer>
-      {user ? <AppStack /> : <AuthStack />}
+      {user?.user.id ? <AppStack /> : <AuthStack />}
     </NavigationContainer>
   )
 }

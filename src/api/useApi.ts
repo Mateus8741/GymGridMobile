@@ -1,10 +1,18 @@
 import { supabase } from 'src/lib/supabase'
 
-type UseApi = {
+export type LoginProps = {
   email: string
   password: string
 }
 
-export async function signInWithEmail({ email, password }: UseApi) {
+async function Login({ email, password }: LoginProps) {
   return await supabase.auth.signInWithPassword({ email, password })
+}
+
+function SignOut() {
+  return supabase.auth.signOut()
+}
+
+export function useAuthFuctions() {
+  return { Login, SignOut }
 }
