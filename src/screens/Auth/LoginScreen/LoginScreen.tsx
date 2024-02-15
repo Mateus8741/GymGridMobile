@@ -2,9 +2,8 @@ import React from 'react'
 import { ImageBackground, StyleSheet, Text, View } from 'react-native'
 
 import BG from '@assets/imgs/Onboarding-3.png'
-import { EyeIcon } from 'lucide-react-native'
 
-import { Box, CustomButton, TextInput } from '@components'
+import { Box, CustomButton, PasswordInput, TextInput } from '@components'
 import { themeExtracted } from '@theme'
 
 export function LoginScreen() {
@@ -31,16 +30,7 @@ export function LoginScreen() {
 
           <View className="h-5" />
 
-          <TextInput
-            placeholder="Senha"
-            rightComponent={
-              <EyeIcon
-                size={24}
-                fill={colors.gray.g100}
-                color={colors.gray.g900}
-              />
-            }
-          />
+          <PasswordInput placeholder="Senha" />
         </View>
 
         <View className="pb-7" />
