@@ -1,4 +1,5 @@
 import { SUPABASE_ANON_KEY, SUPABASE_URL } from '@env'
+import { Database } from '@models'
 import { createClient } from '@supabase/supabase-js'
 import * as SecureStore from 'expo-secure-store'
 
@@ -25,7 +26,7 @@ const ExpoSecureStoreAdapter: SecureStoreAdapter = {
 const supabaseUrl = SUPABASE_URL
 const supabaseAnonKey = SUPABASE_ANON_KEY
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+export const supabase = createClient<Database>(supabaseUrl, supabaseAnonKey, {
   auth: {
     storage: ExpoSecureStoreAdapter,
     autoRefreshToken: true,

@@ -6,6 +6,7 @@
     "start": "expo start",
     "android": "expo run:android",
     "lint": "eslint src/**/*.ts* --fix",
+    "gen-ts": "supabase gen types  typescript --linked > ./src/models/schema.ts",
     "ios": "expo run:ios",
     "web": "expo start --web"
   },
