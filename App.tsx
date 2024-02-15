@@ -24,6 +24,18 @@ export default function App() {
 
   const queryClient = new QueryClient()
 
+  // useEffect(() => {
+  //   const { data: authListener } = supabase.auth.onAuthStateChange(
+  //     (event, session) => {
+  //       console.log('onAuthStateChange', { event, session })
+  //     },
+  //   )
+
+  //   return () => {
+  //     authListener?.subscription?.unsubscribe()
+  //   }
+  // }, [])
+
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <QueryClientProvider client={queryClient}>
