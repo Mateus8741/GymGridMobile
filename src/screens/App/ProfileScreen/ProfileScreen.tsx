@@ -8,11 +8,7 @@ export function ProfileScreen() {
   const { bottom } = useAppSafeArea()
 
   return (
-    <Box
-      style={{
-        paddingBottom: -bottom,
-      }}
-    >
+    <Box style={{ paddingBottom: -bottom }}>
       <HeaderText title="Perfil" />
 
       <View className="flex-1 items-center mt-4">
@@ -20,11 +16,11 @@ export function ProfileScreen() {
       </View>
 
       <View className="bg-gray-g800 justify-end rounded-t-2xl flex-shrink -mx-5 p-5">
-        <TextInput label="Nome" />
-        <TextInput label="Nome" />
-        <TextInput label="Nome" />
-        <TextInput label="Nome" />
-        <TextInput label="Nome" />
+        <TextInput placeholder="Nome" />
+        <TextInput placeholder="Nome" />
+        <TextInput placeholder="Nome" />
+        <TextInput placeholder="Nome" />
+        <TextInput placeholder="Nome" />
       </View>
     </Box>
   )
