@@ -34,24 +34,6 @@ export function ProfileScreen() {
     refetchInterval: 1000,
   })
 
-  console.log(ProfileInfo)
-
-  // ref arwrcnmaiswiuiuiybva
-
-  // senha aPNj8MsRahmB814S
-
-  // async function test() {
-  //   const { data } = await supabase
-  //     .from('profile')
-  //     .select()
-  //     .eq('id', user?.user.id || '')
-  //     .single()
-
-  //   console.log(data)
-  // }
-
-  // test()
-
   return (
     <Box style={{ paddingBottom: -bottom }}>
       <HeaderText title="Perfil" />
