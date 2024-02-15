@@ -43,7 +43,7 @@ export function ProfileScreen() {
       <HeaderText title="Perfil" />
 
       <View className="flex-1 items-center mt-4">
-        <ProfilePicture />
+        <ProfilePicture avatarUrl={ProfileInfo?.avatar_url || undefined} />
       </View>
 
       <CustomButton title="Sair" onPress={signOut} />
