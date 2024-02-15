@@ -4,11 +4,8 @@ import { ImageBackground, StyleSheet, Text, View } from 'react-native'
 import BG from '@assets/imgs/Onboarding-3.png'
 
 import { Box, CustomButton, PasswordInput, TextInput } from '@components'
-import { themeExtracted } from '@theme'
 
 export function LoginScreen() {
-  const { colors } = themeExtracted
-
   return (
     <Box>
       <ImageBackground
