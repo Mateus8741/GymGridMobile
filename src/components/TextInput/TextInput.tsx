@@ -36,7 +36,7 @@ export function TextInput({
           <Text className="text-text-400 mb-2 text-lemon-900">{label}</Text>
         )}
         <View
-          className={`flex-row w-full border-b-[1px] py-2 bg-gray-900/90 rounded-md items-center ${
+          className={`flex-row w-full border-b-[1px] py-2 bg-gray-g900/90 rounded-md items-center ${
             errorMessage ? 'border-error-600' : 'border-lemon-300'
           }`}
         >

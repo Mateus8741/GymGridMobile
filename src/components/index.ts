@@ -10,5 +10,6 @@ export * from './HistoryCards/HistoryCards'
 export * from './Icons/CustonIcons'
 export * from './Loading/Loading'
 export * from './Onboarding/Onboarding'
+export * from './ProfilePicture/ProfilePicture'
 export * from './TextInput/TextInput'
 
