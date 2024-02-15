@@ -8,6 +8,7 @@ module.exports = function (api) {
       'react-native-reanimated/plugin',
       [
         'module-resolver',
+        'module:react-native-dotenv',
         {
           root: '.',
           alias: {
