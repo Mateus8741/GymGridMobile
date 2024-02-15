@@ -14,14 +14,22 @@ function SignOut() {
   return supabase.auth.signOut()
 }
 
-function RefreshToken() {
-  return supabase.auth.onAuthStateChange((event, session) => {
-    if (session?.user.aud !== 'authenticated') {
-      supabase.auth.signOut()
-      // eslint-disable-next-line react-hooks/rules-of-hooks
-      useUserStorage().resetUser()
-    }
-  })
+async function RefreshToken() {
+  // return supabase.auth.onAuthStateChange((event, session) => {
+  //   if (session?.user.aud !== 'authenticated') {
+  //     supabase.auth.signOut()
+  //     // eslint-disable-next-line react-hooks/rules-of-hooks
+  //     useUserStorage().resetUser()
+  //   }
+  // })
+
+  const { data, error } = await supabase.auth.getSession()
+
+  if (error || !data) {
+    supabase.auth.signOut()
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    useUserStorage().resetUser()
+  }
 }
 
 export function useAuthFuctions() {
