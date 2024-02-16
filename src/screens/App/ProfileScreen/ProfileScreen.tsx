@@ -2,10 +2,7 @@
 import React from 'react'
 import { Text, View } from 'react-native'
 
-import { useSignOut } from '@api'
-import { useUserStorage } from '@contexts'
-import { useQuery } from '@tanstack/react-query'
-import { supabase } from 'src/lib/supabase'
+import { useProfileInfo, useSignOut } from '@api'
 
 import {
   Box,
@@ -19,24 +16,9 @@ import { useAppSafeArea } from '@hooks'
 export function ProfileScreen() {
   const { bottom } = useAppSafeArea()
 
-  const { user } = useUserStorage()
-
   const { signOut } = useSignOut()
 
-  const { data: ProfileInfo } = useQuery({
-    queryKey: ['profile-info', user?.user.id],
-    queryFn: async () => {
-      const response = await supabase
-        .from('profile')
-        .select()
-        .eq('id', user?.user.id || '')
-        .single()
-
-      return response.data
-    },
-  })
-
-  console.log(ProfileInfo)
+  const { ProfileInfo } = useProfileInfo()
 
   return (
     <Box style={{ paddingBottom: -bottom }}>
