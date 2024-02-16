@@ -41,29 +41,43 @@ export function ProfileScreen() {
           Dados pessoais
         </Text>
 
-        <TextInput placeholder="Nome" />
+        <TextInput
+          placeholder="Nome"
+          value={ProfileInfo?.display_name?.toString()}
+          editable={false}
+        />
 
         <View className="flex-row ">
           <TextInput
             placeholder="Idade"
+            value={ProfileInfo?.age?.toString()}
+            editable={false}
             keyboardType="number-pad"
             moreClassName="flex-1"
           />
 
           <TextInput
             placeholder="Altura"
+            value={ProfileInfo?.height?.toString()}
+            editable={false}
             keyboardType="number-pad"
             moreClassName="flex-1 mx-3"
           />
 
           <TextInput
             placeholder="Peso"
+            value={ProfileInfo?.weight?.toString()}
+            editable={false}
             keyboardType="number-pad"
             moreClassName="flex-1"
           />
         </View>
 
-        <TextInput placeholder="Sexo" />
+        <TextInput
+          placeholder="Sexo"
+          value={ProfileInfo?.gender?.toString()}
+          editable={false}
+        />
 
         <Text className="text-white text-lg font-bold my-4">Objetivo</Text>
 
