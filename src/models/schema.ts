@@ -34,6 +34,53 @@ export type Database = {
   }
   public: {
     Tables: {
+      evolution: {
+        Row: {
+          arm_l: string | null
+          arm_r: string | null
+          breastplate: string | null
+          created_at: string
+          current_weight: string | null
+          forearm_l: string | null
+          forearm_r: string | null
+          id: string
+          shoulders: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          arm_l?: string | null
+          arm_r?: string | null
+          breastplate?: string | null
+          created_at?: string
+          current_weight?: string | null
+          forearm_l?: string | null
+          forearm_r?: string | null
+          id: string
+          shoulders?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          arm_l?: string | null
+          arm_r?: string | null
+          breastplate?: string | null
+          created_at?: string
+          current_weight?: string | null
+          forearm_l?: string | null
+          forearm_r?: string | null
+          id?: string
+          shoulders?: string | null
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "public_evolution_id_fkey"
+            columns: ["id"]
+            isOneToOne: true
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
       profile: {
         Row: {
           age: number | null

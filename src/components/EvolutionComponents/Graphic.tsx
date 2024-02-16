@@ -23,16 +23,18 @@ export function Graphic({ progress, month }: GraphicProps) {
 
         <View className="flex-1 pr-4 pl-3">
           <View className="flex-row">
-            <View
-              className={`h-4 rounded-full mr-1`}
-              style={{
-                width: `${progress}%`,
-                backgroundColor:
-                  isCurrentMonth === month
-                    ? colors.lemon[900]
-                    : colors.gray.g200,
-              }}
-            />
+            <View className="flex-1 mr-2">
+              <View
+                className={`h-4 rounded-full`}
+                style={{
+                  width: `${progress}%`,
+                  backgroundColor:
+                    isCurrentMonth === month
+                      ? colors.lemon[900]
+                      : colors.gray.g200,
+                }}
+              />
+            </View>
             <Text className={`${textStyle} text-xs`}>{progress}kg</Text>
           </View>
         </View>

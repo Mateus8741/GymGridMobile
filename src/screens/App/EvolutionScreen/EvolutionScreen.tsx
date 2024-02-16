@@ -1,12 +1,26 @@
 import React from 'react'
 import { Text, View } from 'react-native'
 
-import { MONTHS } from '@utils'
+import { useEvolution } from '@api'
+import { monthsUntilCurrent } from '@utils'
 import { FlatList } from 'react-native-gesture-handler'
 
 import { Box, EvolutionMonthList, Graphic, HeaderText } from '@components'
 
 export function EvolutionScreen() {
+  const { Evolution } = useEvolution()
+
+  const formatedTime = new Date(Evolution?.updated_at || '').toLocaleDateString(
+    'pt-BR',
+    {
+      day: '2-digit',
+      month: 'long',
+      year: 'numeric',
+    },
+  )
+
+  console.log(formatedTime)
+
   return (
     <>
       <Box>
@@ -20,15 +34,18 @@ export function EvolutionScreen() {
           </Text>
 
           <Text className="text-white text-xs text-left font-700">
-            ontem as 21h
+            {Evolution?.updated_at}
           </Text>
         </View>
 
         <FlatList
-          data={MONTHS}
+          data={monthsUntilCurrent}
           keyExtractor={(item) => String(item)}
           renderItem={({ item }) => (
-            <Graphic month={item} progress={Math.floor(Math.random() * 100)} />
+            <Graphic
+              month={item}
+              progress={Number(Evolution?.current_weight)}
+            />
           )}
           showsVerticalScrollIndicator={false}
         />
@@ -41,43 +58,57 @@ export function EvolutionScreen() {
           <View className="space-y-5">
             <View className="flex-row justify-between">
               <Text className="text-white text-md font-500">Peso atual</Text>
-              <Text className="text-white text-md font-500">61.2 kg</Text>
+              <Text className="text-white text-md font-500">
+                {Evolution?.current_weight} kg
+              </Text>
             </View>
 
             <View className="flex-row justify-between">
               <Text className="text-white text-md font-500">Ombro</Text>
 
-              <Text className="text-white text-md font-500">102</Text>
+              <Text className="text-white text-md font-500">
+                {Evolution?.shoulders}
+              </Text>
             </View>
 
             <View className="flex-row justify-between">
               <Text className="text-white text-md font-500">Peitoral</Text>
 
-              <Text className="text-white text-md font-500">94</Text>
+              <Text className="text-white text-md font-500">
+                {Evolution?.breastplate}
+              </Text>
             </View>
 
             <View className="flex-row justify-between">
               <Text className="text-white text-md font-500">Braço (D)</Text>
 
-              <Text className="text-white text-md font-500">30</Text>
+              <Text className="text-white text-md font-500">
+                {Evolution?.arm_r}
+              </Text>
             </View>
 
             <View className="flex-row justify-between">
               <Text className="text-white text-md font-500">Braço (E)</Text>
 
-              <Text className="text-white text-md font-500">30</Text>
+              <Text className="text-white text-md font-500">
+                {Evolution?.arm_l}
+              </Text>
             </View>
 
             <View className="flex-row justify-between">
               <Text className="text-white text-md font-500">Antebraço (D)</Text>
 
-              <Text className="text-white text-md font-500">28</Text>
+              <Text className="text-white text-md font-500">
+                {Evolution?.forearm_r}
+              </Text>
             </View>
 
             <View className="flex-row justify-between">
               <Text className="text-white text-md font-500">Antebraço (E)</Text>
 
-              <Text className="text-white text-md font-500">28</Text>
+              <Text className="text-white text-md font-500">
+                {Evolution?.forearm_l}
+              </Text>
             </View>
           </View>
         </View>
