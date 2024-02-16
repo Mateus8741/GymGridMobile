@@ -34,7 +34,7 @@ export function EvolutionScreen() {
           </Text>
 
           <Text className="text-white text-xs text-left font-700">
-            {Evolution?.updated_at}
+            {formatedTime}
           </Text>
         </View>
 
