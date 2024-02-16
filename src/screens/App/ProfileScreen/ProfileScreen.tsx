@@ -6,6 +6,7 @@ import { useProfileInfo, useSignOut } from '@api'
 
 import {
   Box,
+  DarkButton,
   GreenButton,
   HeaderText,
   ProfilePicture,
@@ -20,9 +21,17 @@ export function ProfileScreen() {
 
   const { ProfileInfo } = useProfileInfo()
 
+  function goToObjective() {
+    console.log('goToObjective')
+  }
+
+  function handleSignOut() {
+    signOut()
+  }
+
   return (
     <Box style={{ paddingBottom: -bottom }}>
-      <HeaderText title="Perfil" />
+      <HeaderText title="Perfil" logout={handleSignOut} />
 
       <View className="flex-1 items-center mt-4">
         <ProfilePicture avatarUrl={ProfileInfo?.avatar_url || undefined} />
@@ -60,6 +69,12 @@ export function ProfileScreen() {
         <TextInput placeholder="Sexo" />
 
         <Text className="text-white text-lg font-bold my-4">Objetivo</Text>
+
+        <DarkButton
+          title="Objetivo do treinamento"
+          rightComponent="ChevronRight"
+          onPress={goToObjective}
+        />
       </View>
     </Box>
   )
