@@ -37,7 +37,7 @@ export function TextInput({
         )}
         <View
           className={`flex-row w-full border-b-[1px] py-2 bg-gray-g900/90 rounded-md items-center ${
-            errorMessage ? 'border-error-600' : 'border-lemon-300'
+            errorMessage ? 'border-danger-400' : 'border-lemon-300'
           }`}
         >
           {leftComponent && (
@@ -56,7 +56,7 @@ export function TextInput({
           )}
         </View>
         {errorMessage && (
-          <Text className="text-error-600 text-xs font-semiBold mt-1">
+          <Text className="text-danger-400 text-xs font-semiBold mt-1">
             {errorMessage}
           </Text>
         )}
