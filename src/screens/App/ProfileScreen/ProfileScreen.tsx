@@ -7,7 +7,6 @@ import { useProfileInfo, useSignOut } from '@api'
 import {
   Box,
   DarkButton,
-  GreenButton,
   HeaderText,
   ProfilePicture,
   TextInput,
@@ -33,13 +32,11 @@ export function ProfileScreen() {
     <Box style={{ paddingBottom: -bottom }}>
       <HeaderText title="Perfil" logout={handleSignOut} />
 
-      <View className="flex-1 items-center mt-4">
+      <View className="items-center mt-4">
         <ProfilePicture avatarUrl={ProfileInfo?.avatar_url || undefined} />
       </View>
 
-      <GreenButton title="Sair" onPress={signOut} />
-
-      <View className="bg-gray-g800 justify-end rounded-t-2xl flex-shrink -mx-5 p-5">
+      <View className="bg-gray-g800 rounded-t-2xl flex-1 -mx-5 p-5 mt-6">
         <Text className="text-white text-lg font-bold mb-4">
           Dados pessoais
         </Text>
