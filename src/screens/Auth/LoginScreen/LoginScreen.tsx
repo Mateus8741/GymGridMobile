@@ -4,7 +4,7 @@ import { ImageBackground, StyleSheet, Text, View } from 'react-native'
 import { useSignIn } from '@api'
 import BG from '@assets/imgs/Onboarding-3.png'
 
-import { Box, CustomButton, PasswordInput, TextInput } from '@components'
+import { Box, GreenButton, PasswordInput, TextInput } from '@components'
 
 export function LoginScreen() {
   const [email, setEmail] = useState('t3@t.com')
@@ -51,7 +51,7 @@ export function LoginScreen() {
 
         <View className="pb-7" />
 
-        <CustomButton title="Entrar" onPress={handleLogin} />
+        <GreenButton title="Entrar" onPress={handleLogin} />
       </ImageBackground>
     </Box>
   )

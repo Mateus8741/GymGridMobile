@@ -9,7 +9,7 @@ import { supabase } from 'src/lib/supabase'
 
 import {
   Box,
-  CustomButton,
+  GreenButton,
   HeaderText,
   ProfilePicture,
   TextInput,
@@ -46,7 +46,7 @@ export function ProfileScreen() {
         <ProfilePicture avatarUrl={ProfileInfo?.avatar_url || undefined} />
       </View>
 
-      <CustomButton title="Sair" onPress={signOut} />
+      <GreenButton title="Sair" onPress={signOut} />
 
       <View className="bg-gray-g800 justify-end rounded-t-2xl flex-shrink -mx-5 p-5">
         <Text className="text-white text-lg font-bold mb-4">

@@ -7,7 +7,7 @@ interface Props extends reactNative.TouchableOpacityProps {
   isDisable?: boolean
 }
 
-export function CustomButton({ title, isLoading, isDisable, ...props }: Props) {
+export function DarkButton({ title, isLoading, isDisable, ...props }: Props) {
   return (
     <reactNative.TouchableOpacity
       className={`w-full py-3 items-center rounded-md bg-lemon-900`}
