@@ -3,7 +3,11 @@ import { Image, StatusBar, Text, View } from 'react-native'
 
 import { useAppSafeArea } from '@hooks'
 
-export function HeaderHome() {
+type HeaderHomeProps = {
+  avatarUrl: string | undefined
+}
+
+export function HeaderHome({ avatarUrl }: HeaderHomeProps) {
   const { top } = useAppSafeArea()
 
   return (
@@ -31,13 +35,17 @@ export function HeaderHome() {
             <Text className="text-white text-xl font-bold">Matt</Text>
           </View>
 
-          <View className="flex-col border-2 rounded-full border-lemon-400">
+          <View className="flex-col border-2 rounded-full border-lemon-400 bg-gray-g700">
             <View className="items-center justify-center w-16 h-16 rounded-full">
-              <Image
-                source={{ uri: 'https://i.pravatar.cc/800' }}
-                className="w-16 h-16 rounded-full"
-                alt="Profile Picture"
-              />
+              {avatarUrl ? (
+                <Image
+                  source={{ uri: avatarUrl }}
+                  className="w-16 h-16 rounded-full"
+                  alt="Profile Picture"
+                />
+              ) : (
+                <Text className="text-4xl font-700 text-gray-g100">?</Text>
+              )}
             </View>
           </View>
         </View>
