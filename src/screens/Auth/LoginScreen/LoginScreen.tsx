@@ -7,7 +7,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { LoginScheema, loginScheema } from '@schemas'
 import { useForm } from 'react-hook-form'
 
-import { Box, FormTextInput, GreenButton } from '@components'
+import { Box, FormPasswordInput, FormTextInput, GreenButton } from '@components'
 
 export function LoginScreen() {
   const { control, handleSubmit, watch } = useForm<LoginScheema>({
@@ -24,7 +24,7 @@ export function LoginScreen() {
   const email = watch('email')
   const password = watch('password')
 
-  const { signIn } = useSignIn({ email, password })
+  const { signIn, isPending } = useSignIn({ email, password })
 
   function useHandleLogin() {
     signIn()
@@ -56,7 +56,7 @@ export function LoginScreen() {
 
           <View className="h-5" />
 
-          <FormTextInput
+          <FormPasswordInput
             control={control}
             name="password"
             placeholder="Senha"
@@ -65,7 +65,11 @@ export function LoginScreen() {
 
         <View className="pb-7" />
 
-        <GreenButton title="Entrar" onPress={handleSubmit(useHandleLogin)} />
+        <GreenButton
+          title="Entrar"
+          onPress={handleSubmit(useHandleLogin)}
+          isLoading={isPending}
+        />
       </ImageBackground>
     </Box>
   )

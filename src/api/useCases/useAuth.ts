@@ -13,7 +13,7 @@ export function useSignIn({ email, password }: SignInMutationProps) {
   const { setUser } = useUserStorage()
   const { Login } = useAuthFuctions()
 
-  const { mutate } = useMutation({
+  const { mutate, isPending } = useMutation({
     mutationFn: () => Login({ email, password }),
     onSuccess: ({ data }) => {
       setUser(data as UserModel)
@@ -23,7 +23,7 @@ export function useSignIn({ email, password }: SignInMutationProps) {
     },
   })
 
-  return { signIn: mutate }
+  return { signIn: mutate, isPending }
 }
 
 export function useSignOut() {
