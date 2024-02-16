@@ -50,10 +50,28 @@ export function ProfileScreen() {
 
       <View className="bg-gray-g800 justify-end rounded-t-2xl flex-shrink -mx-5 p-5">
         <TextInput placeholder="Nome" />
-        <TextInput placeholder="Nome" />
-        <TextInput placeholder="Nome" />
-        <TextInput placeholder="Nome" />
-        <TextInput placeholder="Nome" />
+
+        <View className="flex-row ">
+          <TextInput
+            placeholder="Idade"
+            keyboardType="number-pad"
+            moreClassName="flex-1"
+          />
+
+          <TextInput
+            placeholder="Altura"
+            keyboardType="number-pad"
+            moreClassName="flex-1 mx-3"
+          />
+
+          <TextInput
+            placeholder="Peso"
+            keyboardType="number-pad"
+            moreClassName="flex-1"
+          />
+        </View>
+
+        <TextInput placeholder="Sexo" />
       </View>
     </Box>
   )
