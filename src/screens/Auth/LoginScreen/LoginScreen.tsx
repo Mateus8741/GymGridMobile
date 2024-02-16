@@ -1,18 +1,32 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { ImageBackground, StyleSheet, Text, View } from 'react-native'
 
 import { useSignIn } from '@api'
 import BG from '@assets/imgs/Onboarding-3.png'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { LoginScheema, loginScheema } from '@schemas'
+import { useForm } from 'react-hook-form'
 
-import { Box, GreenButton, PasswordInput, TextInput } from '@components'
+import { Box, FormTextInput, GreenButton } from '@components'
 
 export function LoginScreen() {
-  const [email, setEmail] = useState('t3@t.com')
-  const [password, setPassword] = useState('0000')
+  const { control, handleSubmit, watch } = useForm<LoginScheema>({
+    resolver: zodResolver(loginScheema),
+
+    defaultValues: {
+      email: '',
+      password: '',
+    },
+
+    mode: 'onChange',
+  })
+
+  const email = watch('email')
+  const password = watch('password')
 
   const { signIn } = useSignIn({ email, password })
 
-  function handleLogin() {
+  function useHandleLogin() {
     signIn()
   }
 
@@ -33,25 +47,25 @@ export function LoginScreen() {
             Acesse sua conta
           </Text>
 
-          <TextInput
+          <FormTextInput
+            control={control}
+            name="email"
             placeholder="E-mail"
             keyboardType="email-address"
-            value={email}
-            onChangeText={setEmail}
           />
 
           <View className="h-5" />
 
-          <PasswordInput
+          <FormTextInput
+            control={control}
+            name="password"
             placeholder="Senha"
-            value={password}
-            onChangeText={setPassword}
           />
         </View>
 
         <View className="pb-7" />
 
-        <GreenButton title="Entrar" onPress={handleLogin} />
+        <GreenButton title="Entrar" onPress={handleSubmit(useHandleLogin)} />
       </ImageBackground>
     </Box>
   )
