@@ -6,12 +6,13 @@ module.exports = function (api) {
     plugins: [
       'nativewind/babel',
       'react-native-reanimated/plugin',
+      ['module:react-native-dotenv', { moduleName: '@env' }],
       [
         'module-resolver',
         {
           root: '.',
           alias: {
-            '@dtos': './src/dtos',
+            '@models': './src/models',
             '@assets': './src/assets',
             '@components': './src/components',
             '@hooks': './src/hooks',

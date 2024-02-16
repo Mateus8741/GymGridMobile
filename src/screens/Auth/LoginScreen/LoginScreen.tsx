@@ -1,14 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { ImageBackground, StyleSheet, Text, View } from 'react-native'
 
+import { useSignIn } from '@api'
 import BG from '@assets/imgs/Onboarding-3.png'
-import { EyeIcon } from 'lucide-react-native'
 
-import { Box, CustomButton, TextInput } from '@components'
-import { themeExtracted } from '@theme'
+import { Box, CustomButton, PasswordInput, TextInput } from '@components'
 
 export function LoginScreen() {
-  const { colors } = themeExtracted
+  const [email, setEmail] = useState('t3@t.com')
+  const [password, setPassword] = useState('0000')
+
+  const { signIn } = useSignIn({ email, password })
+
+  function handleLogin() {
+    signIn()
+  }
 
   return (
     <Box>
@@ -27,25 +33,25 @@ export function LoginScreen() {
             Acesse sua conta
           </Text>
 
-          <TextInput placeholder="Nome" />
+          <TextInput
+            placeholder="E-mail"
+            keyboardType="email-address"
+            value={email}
+            onChangeText={setEmail}
+          />
 
           <View className="h-5" />
 
-          <TextInput
+          <PasswordInput
             placeholder="Senha"
-            rightComponent={
-              <EyeIcon
-                size={24}
-                fill={colors.gray.g100}
-                color={colors.gray.g900}
-              />
-            }
+            value={password}
+            onChangeText={setPassword}
           />
         </View>
 
         <View className="pb-7" />
 
-        <CustomButton title="Entrar" />
+        <CustomButton title="Entrar" onPress={handleLogin} />
       </ImageBackground>
     </Box>
   )
