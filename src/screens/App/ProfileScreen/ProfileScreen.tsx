@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react'
-import { View } from 'react-native'
+import { Text, View } from 'react-native'
 
 import { useSignOut } from '@api'
 import { useUserStorage } from '@contexts'
@@ -49,6 +49,10 @@ export function ProfileScreen() {
       <CustomButton title="Sair" onPress={signOut} />
 
       <View className="bg-gray-g800 justify-end rounded-t-2xl flex-shrink -mx-5 p-5">
+        <Text className="text-white text-lg font-bold mb-4">
+          Dados pessoais
+        </Text>
+
         <TextInput placeholder="Nome" />
 
         <View className="flex-row ">
@@ -72,6 +76,8 @@ export function ProfileScreen() {
         </View>
 
         <TextInput placeholder="Sexo" />
+
+        <Text className="text-white text-lg font-bold my-4">Objetivo</Text>
       </View>
     </Box>
   )
