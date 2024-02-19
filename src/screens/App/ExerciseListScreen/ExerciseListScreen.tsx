@@ -1,12 +1,12 @@
 import React from 'react'
-import { Text } from 'react-native'
 
-import { Box } from '@components'
+import { Box, ExerciseCards, HeaderText } from '@components'
 
 export function ExerciseListScreen() {
   return (
     <Box>
-      <Text>ExerciseListScreen</Text>
+      <HeaderText title="Perfil" canGoBack />
+      <ExerciseCards />
     </Box>
   )
 }
