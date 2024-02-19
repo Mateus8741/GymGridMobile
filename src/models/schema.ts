@@ -81,6 +81,50 @@ export type Database = {
           }
         ]
       }
+      exercises: {
+        Row: {
+          created_at: string
+          description: string | null
+          holding: number | null
+          id: string
+          image_url: string | null
+          repetitions: number | null
+          series: number | null
+          tag: Database["public"]["Enums"]["tags"] | null
+          title: string | null
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          holding?: number | null
+          id: string
+          image_url?: string | null
+          repetitions?: number | null
+          series?: number | null
+          tag?: Database["public"]["Enums"]["tags"] | null
+          title?: string | null
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          holding?: number | null
+          id?: string
+          image_url?: string | null
+          repetitions?: number | null
+          series?: number | null
+          tag?: Database["public"]["Enums"]["tags"] | null
+          title?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "public_exercises_id_fkey"
+            columns: ["id"]
+            isOneToOne: true
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          }
+        ]
+      }
       profile: {
         Row: {
           age: number | null
@@ -130,6 +174,7 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
+      tags: "training_A" | "training_B" | "training_C" | "training_D"
       type_sex: "Masculino" | "Feminino"
     }
     CompositeTypes: {
