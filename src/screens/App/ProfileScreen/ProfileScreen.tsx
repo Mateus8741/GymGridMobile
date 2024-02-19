@@ -27,12 +27,19 @@ export function ProfileScreen() {
     signOut()
   }
 
+  function uploadProfilePicture() {
+    console.log('uploadProfilePicture')
+  }
+
   return (
     <Box style={{ paddingBottom: -bottom }}>
       <HeaderText title="Perfil" logout={handleSignOut} />
 
       <View className="items-center mt-4">
-        <ProfilePicture avatarUrl={ProfileInfo?.avatar_url || undefined} />
+        <ProfilePicture
+          avatarUrl={ProfileInfo?.avatar_url || undefined}
+          onPress={uploadProfilePicture}
+        />
       </View>
 
       <View className="bg-gray-g800 rounded-t-2xl flex-1 -mx-5 p-5 mt-6">

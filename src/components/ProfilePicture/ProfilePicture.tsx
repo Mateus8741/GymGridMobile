@@ -1,15 +1,11 @@
 import React from 'react'
-import { Image, Pressable, Text, View } from 'react-native'
+import { Image, Pressable, PressableProps, Text, View } from 'react-native'
 
-type ProfilePictureProps = {
+type ProfilePictureProps = PressableProps & {
   avatarUrl: string | undefined
 }
 
-export function ProfilePicture({ avatarUrl }: ProfilePictureProps) {
-  function handleChangeProfilePicture() {
-    console.log('trocar foto de perfil')
-  }
-
+export function ProfilePicture({ avatarUrl, ...rest }: ProfilePictureProps) {
   return (
     <View className="items-center mt-4">
       <View className="bg-gray-g300 w-[118px] h-[118px] items-center justify-center rounded-full">
@@ -28,7 +24,7 @@ export function ProfilePicture({ avatarUrl }: ProfilePictureProps) {
         )}
       </View>
 
-      <Pressable onPress={handleChangeProfilePicture}>
+      <Pressable {...rest}>
         <Text className="text-lemon-400 font-700 text-md mt-4">
           Alterar foto
         </Text>

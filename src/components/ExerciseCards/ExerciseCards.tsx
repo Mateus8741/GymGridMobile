@@ -1,7 +1,7 @@
 import React from 'react'
 import { Image, Text, View } from 'react-native'
 
-import { useBucket } from '@api'
+import { useProfileInfo } from '@api'
 import { ChevronRight } from 'lucide-react-native'
 
 type ExerciseCardsProps = {
@@ -11,14 +11,14 @@ type ExerciseCardsProps = {
 }
 
 export function ExerciseCards() {
-  const { Bucket } = useBucket()
+  const { ProfileInfo } = useProfileInfo()
 
-  console.log(Bucket)
+  console.log(ProfileInfo?.display_name)
 
   return (
     <View className="bg-black rounded-md p-2.5 flex-row items-center mb-2 border-l-4 border-gray-g300">
       <Image
-        source={{ uri: 'https://github.com/Mateus8741.png' }}
+        source={{ uri: 'https://via.placeholder.com/150' }}
         className="w-20 h-20 mr-3 -ml-1 rounded-md"
         alt="Exercícios"
       />
