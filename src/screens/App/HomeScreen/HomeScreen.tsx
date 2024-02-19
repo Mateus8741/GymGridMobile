@@ -5,12 +5,14 @@ import { useProfileInfo } from '@api'
 import { Card, cardsHome } from '@utils'
 
 import { Box, Cards, HeaderHome } from '@components'
+import { AppTabScreenProps } from '@routes'
 
-export function HomeScreen() {
+export function HomeScreen({ navigation }: AppTabScreenProps<'HomeScreen'>) {
   const { ProfileInfo } = useProfileInfo()
 
   function goToExercises(card: Card) {
     console.log('Go to exercises', card)
+    navigation.navigate('ExerciseListScreen', { card })
   }
 
   return (
