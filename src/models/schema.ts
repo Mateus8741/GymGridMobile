@@ -73,12 +73,12 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "public_evolution_id_fkey"
-            columns: ["id"]
+            foreignKeyName: 'public_evolution_id_fkey'
+            columns: ['id']
             isOneToOne: true
-            referencedRelation: "users"
-            referencedColumns: ["id"]
-          }
+            referencedRelation: 'users'
+            referencedColumns: ['id']
+          },
         ]
       }
       exercises: {
@@ -90,7 +90,7 @@ export type Database = {
           image_url: string | null
           repetitions: number | null
           series: number | null
-          tag: Database["public"]["Enums"]["tags"] | null
+          tag: Database['public']['Enums']['tags'] | null
           title: string | null
         }
         Insert: {
@@ -101,7 +101,7 @@ export type Database = {
           image_url?: string | null
           repetitions?: number | null
           series?: number | null
-          tag?: Database["public"]["Enums"]["tags"] | null
+          tag?: Database['public']['Enums']['tags'] | null
           title?: string | null
         }
         Update: {
@@ -112,17 +112,17 @@ export type Database = {
           image_url?: string | null
           repetitions?: number | null
           series?: number | null
-          tag?: Database["public"]["Enums"]["tags"] | null
+          tag?: Database['public']['Enums']['tags'] | null
           title?: string | null
         }
         Relationships: [
           {
-            foreignKeyName: "public_exercises_id_fkey"
-            columns: ["id"]
+            foreignKeyName: 'public_exercises_id_fkey'
+            columns: ['id']
             isOneToOne: true
-            referencedRelation: "users"
-            referencedColumns: ["id"]
-          }
+            referencedRelation: 'users'
+            referencedColumns: ['id']
+          },
         ]
       }
       profile: {
@@ -131,7 +131,7 @@ export type Database = {
           avatar_url: string | null
           created_at: string
           display_name: string | null
-          gender: Database["public"]["Enums"]["type_sex"] | null
+          gender: Database['public']['Enums']['type_sex'] | null
           height: number | null
           id: string
           weight: number | null
@@ -141,7 +141,7 @@ export type Database = {
           avatar_url?: string | null
           created_at?: string
           display_name?: string | null
-          gender?: Database["public"]["Enums"]["type_sex"] | null
+          gender?: Database['public']['Enums']['type_sex'] | null
           height?: number | null
           id?: string
           weight?: number | null
@@ -151,19 +151,19 @@ export type Database = {
           avatar_url?: string | null
           created_at?: string
           display_name?: string | null
-          gender?: Database["public"]["Enums"]["type_sex"] | null
+          gender?: Database['public']['Enums']['type_sex'] | null
           height?: number | null
           id?: string
           weight?: number | null
         }
         Relationships: [
           {
-            foreignKeyName: "public_ProfileInfo_id_fkey"
-            columns: ["id"]
+            foreignKeyName: 'public_ProfileInfo_id_fkey'
+            columns: ['id']
             isOneToOne: true
-            referencedRelation: "users"
-            referencedColumns: ["id"]
-          }
+            referencedRelation: 'users'
+            referencedColumns: ['id']
+          },
         ]
       }
     }
@@ -174,8 +174,8 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      tags: "training_A" | "training_B" | "training_C" | "training_D"
-      type_sex: "Masculino" | "Feminino"
+      tags: 'training_A' | 'training_B' | 'training_C' | 'training_D'
+      type_sex: 'Masculino' | 'Feminino'
     }
     CompositeTypes: {
       [_ in never]: never
@@ -285,12 +285,12 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "objects_bucketId_fkey"
-            columns: ["bucket_id"]
+            foreignKeyName: 'objects_bucketId_fkey'
+            columns: ['bucket_id']
             isOneToOne: false
-            referencedRelation: "buckets"
-            referencedColumns: ["id"]
-          }
+            referencedRelation: 'buckets'
+            referencedColumns: ['id']
+          },
         ]
       }
     }
@@ -364,80 +364,80 @@ export type Database = {
 
 export type Tables<
   PublicTableNameOrOptions extends
-    | keyof (Database["public"]["Tables"] & Database["public"]["Views"])
+    | keyof (Database['public']['Tables'] & Database['public']['Views'])
     | { schema: keyof Database },
   TableName extends PublicTableNameOrOptions extends { schema: keyof Database }
-    ? keyof (Database[PublicTableNameOrOptions["schema"]]["Tables"] &
-        Database[PublicTableNameOrOptions["schema"]]["Views"])
-    : never = never
+    ? keyof (Database[PublicTableNameOrOptions['schema']]['Tables'] &
+        Database[PublicTableNameOrOptions['schema']]['Views'])
+    : never = never,
 > = PublicTableNameOrOptions extends { schema: keyof Database }
-  ? (Database[PublicTableNameOrOptions["schema"]]["Tables"] &
-      Database[PublicTableNameOrOptions["schema"]]["Views"])[TableName] extends {
+  ? (Database[PublicTableNameOrOptions['schema']]['Tables'] &
+      Database[PublicTableNameOrOptions['schema']]['Views'])[TableName] extends {
       Row: infer R
     }
     ? R
     : never
-  : PublicTableNameOrOptions extends keyof (Database["public"]["Tables"] &
-      Database["public"]["Views"])
-  ? (Database["public"]["Tables"] &
-      Database["public"]["Views"])[PublicTableNameOrOptions] extends {
-      Row: infer R
-    }
-    ? R
+  : PublicTableNameOrOptions extends keyof (Database['public']['Tables'] &
+        Database['public']['Views'])
+    ? (Database['public']['Tables'] &
+        Database['public']['Views'])[PublicTableNameOrOptions] extends {
+        Row: infer R
+      }
+      ? R
+      : never
     : never
-  : never
 
 export type TablesInsert<
   PublicTableNameOrOptions extends
-    | keyof Database["public"]["Tables"]
+    | keyof Database['public']['Tables']
     | { schema: keyof Database },
   TableName extends PublicTableNameOrOptions extends { schema: keyof Database }
-    ? keyof Database[PublicTableNameOrOptions["schema"]]["Tables"]
-    : never = never
+    ? keyof Database[PublicTableNameOrOptions['schema']]['Tables']
+    : never = never,
 > = PublicTableNameOrOptions extends { schema: keyof Database }
-  ? Database[PublicTableNameOrOptions["schema"]]["Tables"][TableName] extends {
+  ? Database[PublicTableNameOrOptions['schema']]['Tables'][TableName] extends {
       Insert: infer I
     }
     ? I
     : never
-  : PublicTableNameOrOptions extends keyof Database["public"]["Tables"]
-  ? Database["public"]["Tables"][PublicTableNameOrOptions] extends {
-      Insert: infer I
-    }
-    ? I
+  : PublicTableNameOrOptions extends keyof Database['public']['Tables']
+    ? Database['public']['Tables'][PublicTableNameOrOptions] extends {
+        Insert: infer I
+      }
+      ? I
+      : never
     : never
-  : never
 
 export type TablesUpdate<
   PublicTableNameOrOptions extends
-    | keyof Database["public"]["Tables"]
+    | keyof Database['public']['Tables']
     | { schema: keyof Database },
   TableName extends PublicTableNameOrOptions extends { schema: keyof Database }
-    ? keyof Database[PublicTableNameOrOptions["schema"]]["Tables"]
-    : never = never
+    ? keyof Database[PublicTableNameOrOptions['schema']]['Tables']
+    : never = never,
 > = PublicTableNameOrOptions extends { schema: keyof Database }
-  ? Database[PublicTableNameOrOptions["schema"]]["Tables"][TableName] extends {
+  ? Database[PublicTableNameOrOptions['schema']]['Tables'][TableName] extends {
       Update: infer U
     }
     ? U
     : never
-  : PublicTableNameOrOptions extends keyof Database["public"]["Tables"]
-  ? Database["public"]["Tables"][PublicTableNameOrOptions] extends {
-      Update: infer U
-    }
-    ? U
+  : PublicTableNameOrOptions extends keyof Database['public']['Tables']
+    ? Database['public']['Tables'][PublicTableNameOrOptions] extends {
+        Update: infer U
+      }
+      ? U
+      : never
     : never
-  : never
 
 export type Enums<
   PublicEnumNameOrOptions extends
-    | keyof Database["public"]["Enums"]
+    | keyof Database['public']['Enums']
     | { schema: keyof Database },
   EnumName extends PublicEnumNameOrOptions extends { schema: keyof Database }
-    ? keyof Database[PublicEnumNameOrOptions["schema"]]["Enums"]
-    : never = never
+    ? keyof Database[PublicEnumNameOrOptions['schema']]['Enums']
+    : never = never,
 > = PublicEnumNameOrOptions extends { schema: keyof Database }
-  ? Database[PublicEnumNameOrOptions["schema"]]["Enums"][EnumName]
-  : PublicEnumNameOrOptions extends keyof Database["public"]["Enums"]
-  ? Database["public"]["Enums"][PublicEnumNameOrOptions]
-  : never
+  ? Database[PublicEnumNameOrOptions['schema']]['Enums'][EnumName]
+  : PublicEnumNameOrOptions extends keyof Database['public']['Enums']
+    ? Database['public']['Enums'][PublicEnumNameOrOptions]
+    : never
