@@ -1,26 +1,30 @@
 import React from 'react'
-import { Image, Text, TouchableOpacity } from 'react-native'
+import {
+  Image,
+  Text,
+  TouchableOpacity,
+  TouchableOpacityProps,
+} from 'react-native'
 
-import { Card, cardsHome } from '@utils'
+import { Card } from '@utils'
 
-export function Cards() {
-  function handlePress(card: Card) {
-    console.log('Card pressed', card)
-  }
+type CardProps = TouchableOpacityProps & {
+  data: Card
+}
 
-  return cardsHome.map((card, index) => (
+export function Cards({ data, ...props }: CardProps) {
+  return (
     <TouchableOpacity
-      key={index}
       className="w-[182px] mb-3 -mx-3 p-3 rounded-xl bg-black"
-      onPress={() => handlePress(card)}
+      {...props}
     >
       <Image
-        source={card.image}
+        source={data.image}
         className="w-14 h-14 mb-3 rounded-lg"
         alt="Exercícios"
       />
-      <Text className="text-white font-700 text-base">{card.title}</Text>
-      <Text className="text-white font-500 text-xs">{card.description}</Text>
+      <Text className="text-white font-700 text-base">{data.title}</Text>
+      <Text className="text-white font-500 text-xs">{data.description}</Text>
     </TouchableOpacity>
-  ))
+  )
 }

@@ -19,8 +19,6 @@ export function EvolutionScreen() {
     },
   )
 
-  console.log(formatedTime)
-
   return (
     <>
       <Box>
