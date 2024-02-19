@@ -27,7 +27,7 @@ export function HeaderText({ title, canGoBack, logout }: HeaderTextProps) {
     <View className={`flex-row mt-6 items-center ${place}`}>
       {canGoBack ? (
         <TouchableOpacity
-          className="w-6 h-6 p-4 rounded-md items-center justify-center"
+          className="w-6 h-6 rounded-md items-center justify-center"
           onPress={handleGoBack}
         >
           <ChevronLeft size={24} color={colors.lemon[300]} />
