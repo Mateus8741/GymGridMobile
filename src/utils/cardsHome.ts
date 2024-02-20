@@ -1,9 +1,10 @@
 import { ImageSourcePropType } from 'react-native'
 
-import Sl1 from '@assets/Icons/arms.png'
-import Sl4 from '@assets/Icons/ass.png'
-import Sl3 from '@assets/Icons/body.png'
-import Sl2 from '@assets/Icons/legs.png'
+import Arms from '@assets/Icons/arms.png'
+import Inferior from '@assets/Icons/ass.png'
+import Body from '@assets/Icons/body.png'
+import BodyBack from '@assets/Icons/body_back.png'
+import FrontBody from '@assets/Icons/front_body.png'
 
 export type Card = {
   id: number
@@ -16,26 +17,26 @@ export const cardsHomeMale: Card[] = [
   {
     id: 1,
     title: 'Treino A',
-    description: 'Costas, Abdome e Bíceps',
-    image: Sl1,
+    description: 'Peito, Tríceps e Ombro',
+    image: FrontBody,
   },
   {
     id: 2,
     title: 'Treino B',
-    description: 'Inferior pernas',
-    image: Sl2,
+    description: 'Costa e Biceps',
+    image: BodyBack,
   },
   {
     id: 3,
     title: 'Treino C',
-    description: 'Tórax, ombro e trícepes',
-    image: Sl3,
+    description: 'Pernas Completas',
+    image: Inferior,
   },
   {
     id: 4,
     title: 'Treino D',
-    description: 'Posterior',
-    image: Sl4,
+    description: 'Abdômen',
+    image: Body,
   },
 ]
 
@@ -44,24 +45,24 @@ export const cardsHomeFemale: Card[] = [
     id: 1,
     title: 'Treino A',
     description: 'Costas, Abdome e Bíceps',
-    image: Sl1,
+    image: Arms,
   },
   {
     id: 2,
     title: 'Treino B',
     description: 'Inferior pernas',
-    image: Sl2,
+    image: BodyBack,
   },
   {
     id: 3,
     title: 'Treino C',
     description: 'Tórax, ombro e trícepes',
-    image: Sl3,
+    image: Inferior,
   },
   {
     id: 4,
     title: 'Treino D',
     description: 'Posterior',
-    image: Sl4,
+    image: Body,
   },
 ]
