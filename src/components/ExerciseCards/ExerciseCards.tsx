@@ -1,9 +1,16 @@
 import React from 'react'
-import { Image, ImageSourcePropType, Text, View } from 'react-native'
+import {
+  Image,
+  ImageSourcePropType,
+  Text,
+  TouchableOpacity,
+  TouchableOpacityProps,
+  View,
+} from 'react-native'
 
 import { ChevronRight } from 'lucide-react-native'
 
-export type ExerciseCardsProps = {
+export type ExerciseCardsProps = TouchableOpacityProps & {
   item: {
     imageUrl: ImageSourcePropType | undefined
     title: string
@@ -11,7 +18,7 @@ export type ExerciseCardsProps = {
   }
 }
 
-export function ExerciseCards({ item }: ExerciseCardsProps) {
+export function ExerciseCards({ item, ...rest }: ExerciseCardsProps) {
   function showImage() {
     if (item.imageUrl) {
       return item.imageUrl
@@ -21,7 +28,10 @@ export function ExerciseCards({ item }: ExerciseCardsProps) {
   }
 
   return (
-    <View className="bg-black rounded-md p-2.5 flex-row items-center mb-2 border-l-4 border-gray-g300">
+    <TouchableOpacity
+      className="bg-black rounded-md p-2.5 flex-row items-center mb-2 border-l-4 border-gray-g300"
+      {...rest}
+    >
       <Image
         source={showImage()}
         className="w-20 h-20 mr-3 -ml-1 rounded-md"
@@ -34,6 +44,6 @@ export function ExerciseCards({ item }: ExerciseCardsProps) {
       </View>
 
       <ChevronRight className="text-lemon-300" size={24} />
-    </View>
+    </TouchableOpacity>
   )
 }
