@@ -3,64 +3,50 @@ import { ExerciseCardsProps } from '@components'
 export const $trainingA: ExerciseCardsProps[] = [
   {
     item: {
-      imageUrl: 'https://via.placeholder.com/150',
-      title: 'Supino',
+      imageUrl: require('@assets/imgs/training_A/agachamento.png'),
+      title: 'Agachamento',
       description: '3 séries de 15 repetições',
     },
   },
   {
     item: {
-      imageUrl: 'https://via.placeholder.com/150',
-      title: 'Supino Inclinado',
+      imageUrl: require('@assets/imgs/training_A/leg_press.png'),
+      title: 'Leg Press 45°',
       description: '3 séries de 15 repetições',
     },
   },
   {
     item: {
-      imageUrl: 'https://via.placeholder.com/150',
-      title: 'Supino Declinado',
+      imageUrl: require('@assets/imgs/training_A/hack_machine.png'),
+      title: 'Hack Machine',
       description: '3 séries de 15 repetições',
     },
   },
   {
     item: {
-      imageUrl: 'https://via.placeholder.com/150',
-      title: 'Rosca Direta',
+      imageUrl: require('@assets/imgs/training_A/afundo.png'),
+      title: 'Afundo',
       description: '3 séries de 15 repetições',
     },
   },
   {
     item: {
-      imageUrl: 'https://via.placeholder.com/150',
-      title: 'Rosca Alternada',
+      imageUrl: require('@assets/imgs/training_A/cadeira_extensora.png'),
+      title: 'Cadeira Extensora',
       description: '3 séries de 15 repetições',
     },
   },
   {
     item: {
-      imageUrl: 'https://via.placeholder.com/150',
-      title: 'Rosca Martelo',
+      imageUrl: require('@assets/imgs/training_A/aducao.png'),
+      title: 'Adução',
       description: '3 séries de 15 repetições',
     },
   },
   {
     item: {
-      imageUrl: 'https://via.placeholder.com/150',
-      title: 'Tríceps Testa',
-      description: '3 séries de 15 repetições',
-    },
-  },
-  {
-    item: {
-      imageUrl: 'https://via.placeholder.com/150',
-      title: 'Tríceps Pulley',
-      description: '3 séries de 15 repetições',
-    },
-  },
-  {
-    item: {
-      imageUrl: 'https://via.placeholder.com/150',
-      title: 'Tríceps Corda',
+      imageUrl: require('@assets/imgs/training_A/panturrilha_em_pe.png'),
+      title: 'Panturrilha em pé',
       description: '3 séries de 15 repetições',
     },
   },
