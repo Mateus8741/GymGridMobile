@@ -20,8 +20,8 @@ export function ExerciseListScreen({
       <HeaderText title={card.title} canGoBack />
 
       <FlatList
-        data={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
-        keyExtractor={(item) => String(item)}
+        data={Array.from({ length: 10 })}
+        keyExtractor={(item, index) => String(index)}
         renderItem={() => <ExerciseCards />}
         showsVerticalScrollIndicator={false}
         className="mt-6"
