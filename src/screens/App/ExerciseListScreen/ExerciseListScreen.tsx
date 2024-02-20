@@ -1,7 +1,9 @@
 import React from 'react'
-import { FlatList } from 'react-native'
+import { FlatList, ListRenderItemInfo } from 'react-native'
 
-import { Box, ExerciseCards, HeaderText } from '@components'
+import { $trainingA } from '@mock'
+
+import { Box, ExerciseCards, ExerciseCardsProps, HeaderText } from '@components'
 import { AppScreenProps } from '@routes'
 
 export function ExerciseListScreen({
@@ -15,14 +17,18 @@ export function ExerciseListScreen({
     console.log('goToExerciseDetails')
   }
 
+  function renderItem({ item }: ListRenderItemInfo<ExerciseCardsProps>) {
+    return <ExerciseCards {...item} />
+  }
+
   return (
     <Box>
       <HeaderText title={card.title} canGoBack />
 
       <FlatList
-        data={Array.from({ length: 10 })}
+        data={$trainingA}
         keyExtractor={(item, index) => String(index)}
-        renderItem={() => <ExerciseCards />}
+        renderItem={renderItem}
         showsVerticalScrollIndicator={false}
         className="mt-6"
       />
