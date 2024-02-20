@@ -1,7 +1,7 @@
 import React from 'react'
 import { FlatList, ListRenderItemInfo } from 'react-native'
 
-import { $trainingA, $trainingB, $trainingC, $trainingD } from '@mock'
+import { $trainingMA, $trainingMB, $trainingMC, $trainingMD } from '@mock'
 
 import { Box, ExerciseCards, ExerciseCardsProps, HeaderText } from '@components'
 import { AppScreenProps } from '@routes'
@@ -22,13 +22,13 @@ export function ExerciseListScreen({
   function switchBetweenExercises() {
     switch (card.title) {
       case 'Treino A':
-        return $trainingA
+        return $trainingMA
       case 'Treino B':
-        return $trainingB
+        return $trainingMB
       case 'Treino C':
-        return $trainingC
+        return $trainingMC
       case 'Treino D':
-        return $trainingD
+        return $trainingMD
     }
   }
 
