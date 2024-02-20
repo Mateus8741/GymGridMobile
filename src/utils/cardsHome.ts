@@ -16,25 +16,25 @@ export const cardsHome: Card[] = [
   {
     id: 1,
     title: 'Treino A',
-    description: 'Tórax, ombro e trícepes',
+    description: 'Costas, Abdômen e Bíceps',
     image: Sl1,
   },
   {
     id: 2,
     title: 'Treino B',
-    description: 'Costas, Abdôme e Bíceps',
+    description: 'Inferior pernas',
     image: Sl2,
   },
   {
     id: 3,
     title: 'Treino C',
-    description: 'Inferior pernas',
+    description: 'Tórax, ombro e trícepes',
     image: Sl3,
   },
   {
     id: 4,
     title: 'Treino D',
-    description: 'Inferior pernas',
+    description: 'Posterior',
     image: Sl4,
   },
 ]
