@@ -24,7 +24,9 @@ export function Cards({ data, ...props }: CardProps) {
         alt="Exercícios"
       />
       <Text className="text-white font-700 text-base">{data.title}</Text>
-      <Text className="text-white font-500 text-xs">{data.description}</Text>
+      <Text className="text-white font-700 text-[11.5px]">
+        {data.description}
+      </Text>
     </TouchableOpacity>
   )
 }

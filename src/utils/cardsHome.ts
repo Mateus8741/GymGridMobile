@@ -16,7 +16,7 @@ export const cardsHome: Card[] = [
   {
     id: 1,
     title: 'Treino A',
-    description: 'Costas, Abdômen e Bíceps',
+    description: 'Costas, Abdome e Bíceps',
     image: Sl1,
   },
   {
