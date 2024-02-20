@@ -12,7 +12,34 @@ export type Card = {
   description: string
 }
 
-export const cardsHome: Card[] = [
+export const cardsHomeMale: Card[] = [
+  {
+    id: 1,
+    title: 'Treino A',
+    description: 'Costas, Abdome e Bíceps',
+    image: Sl1,
+  },
+  {
+    id: 2,
+    title: 'Treino B',
+    description: 'Inferior pernas',
+    image: Sl2,
+  },
+  {
+    id: 3,
+    title: 'Treino C',
+    description: 'Tórax, ombro e trícepes',
+    image: Sl3,
+  },
+  {
+    id: 4,
+    title: 'Treino D',
+    description: 'Posterior',
+    image: Sl4,
+  },
+]
+
+export const cardsHomeFemale: Card[] = [
   {
     id: 1,
     title: 'Treino A',

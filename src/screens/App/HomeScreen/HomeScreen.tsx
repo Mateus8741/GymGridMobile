@@ -2,7 +2,7 @@ import React from 'react'
 import { View } from 'react-native'
 
 import { useProfileInfo } from '@api'
-import { Card, cardsHome } from '@utils'
+import { Card, cardsHomeMale } from '@utils'
 
 import { Box, Cards, HeaderHome } from '@components'
 import { AppTabScreenProps } from '@routes'
@@ -24,7 +24,7 @@ export function HomeScreen({ navigation }: AppTabScreenProps<'HomeScreen'>) {
 
       <Box>
         <View className="flex-1 flex-row flex-wrap justify-between">
-          {cardsHome.map((card, index) => (
+          {cardsHomeMale.map((card, index) => (
             <Cards
               key={index}
               data={card}
