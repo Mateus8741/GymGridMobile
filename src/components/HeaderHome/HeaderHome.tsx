@@ -1,8 +1,6 @@
 import React from 'react'
 import { Image, StatusBar, Text, View } from 'react-native'
 
-import { useProfileInfo } from '@api'
-
 import { useAppSafeArea } from '@hooks'
 
 type HeaderHomeProps = {
@@ -12,8 +10,6 @@ type HeaderHomeProps = {
 
 export function HeaderHome({ avatarUrl, displayName }: HeaderHomeProps) {
   const { top } = useAppSafeArea()
-
-  const { ProfileInfo } = useProfileInfo()
 
   return (
     <View className="bg-bgColor-800">
