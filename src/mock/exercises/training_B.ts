@@ -1,10 +1,10 @@
 import { ExerciseCardsProps } from '@components'
 
-export const $trainingA: ExerciseCardsProps[] = [
+export const $trainingB: ExerciseCardsProps[] = [
   {
     item: {
       imageUrl: require('@assets/imgs/training_A/agachamento.png'),
-      title: 'Agachamento',
+      title: 'Teste do treino B',
       resume: 'Aqui será o resumo do exercicio',
       series: 1,
       repetitions: 15,
@@ -14,7 +14,7 @@ export const $trainingA: ExerciseCardsProps[] = [
   {
     item: {
       imageUrl: require('@assets/imgs/training_A/leg_press.png'),
-      title: 'Leg Press 45°',
+      title: 'Teste do treino B',
       resume: 'Aqui será o resumo do exercicio',
       series: 3,
       repetitions: 15,
@@ -24,7 +24,7 @@ export const $trainingA: ExerciseCardsProps[] = [
   {
     item: {
       imageUrl: require('@assets/imgs/training_A/hack_machine.png'),
-      title: 'Hack Machine',
+      title: 'Teste do treino B',
       resume: 'Aqui será o resumo do exercicio',
       series: 3,
       repetitions: 15,
@@ -34,7 +34,7 @@ export const $trainingA: ExerciseCardsProps[] = [
   {
     item: {
       imageUrl: require('@assets/imgs/training_A/afundo.png'),
-      title: 'Afundo',
+      title: 'Teste do treino B',
       resume: 'Aqui será o resumo do exercicio',
       series: 3,
       repetitions: 15,
@@ -44,7 +44,7 @@ export const $trainingA: ExerciseCardsProps[] = [
   {
     item: {
       imageUrl: require('@assets/imgs/training_A/cadeira_extensora.png'),
-      title: 'Cadeira Extensora',
+      title: 'Teste do treino B',
       resume: 'Aqui será o resumo do exercicio',
       series: 3,
       repetitions: 15,
@@ -54,7 +54,7 @@ export const $trainingA: ExerciseCardsProps[] = [
   {
     item: {
       imageUrl: require('@assets/imgs/training_A/aducao.png'),
-      title: 'Adução',
+      title: 'Teste do treino B',
       resume: 'Aqui será o resumo do exercicio',
       series: 3,
       repetitions: 15,
@@ -64,7 +64,7 @@ export const $trainingA: ExerciseCardsProps[] = [
   {
     item: {
       imageUrl: require('@assets/imgs/training_A/panturrilha_em_pe.png'),
-      title: 'Panturrilha em pé',
+      title: 'Teste do treino B',
       resume: 'Aqui será o resumo do exercicio',
       series: 3,
       repetitions: 15,
