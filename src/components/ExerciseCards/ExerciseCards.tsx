@@ -1,26 +1,29 @@
 import React from 'react'
-import { Image, Text, View } from 'react-native'
+import { Image, ImageSourcePropType, Text, View } from 'react-native'
 
-import { useProfileInfo } from '@api'
 import { ChevronRight } from 'lucide-react-native'
 
 export type ExerciseCardsProps = {
   item: {
-    imageUrl: string
+    imageUrl: ImageSourcePropType | undefined
     title: string
     description: string
   }
 }
 
 export function ExerciseCards({ item }: ExerciseCardsProps) {
-  const { ProfileInfo } = useProfileInfo()
+  function showImage() {
+    if (item.imageUrl) {
+      return item.imageUrl
+    }
 
-  console.log(ProfileInfo?.display_name)
+    return { uri: 'https://via.placeholder.com/150' }
+  }
 
   return (
     <View className="bg-black rounded-md p-2.5 flex-row items-center mb-2 border-l-4 border-gray-g300">
       <Image
-        source={{ uri: item.imageUrl }}
+        source={showImage()}
         className="w-20 h-20 mr-3 -ml-1 rounded-md"
         alt="Exercícios"
       />

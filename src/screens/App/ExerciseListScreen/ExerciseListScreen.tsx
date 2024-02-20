@@ -18,7 +18,7 @@ export function ExerciseListScreen({
   }
 
   function renderItem({ item }: ListRenderItemInfo<ExerciseCardsProps>) {
-    return <ExerciseCards {...item} />
+    return <ExerciseCards item={item.item} />
   }
 
   return (
