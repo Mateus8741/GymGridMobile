@@ -1,14 +1,19 @@
 import React from 'react'
 import { Image, StatusBar, Text, View } from 'react-native'
 
+import { useProfileInfo } from '@api'
+
 import { useAppSafeArea } from '@hooks'
 
 type HeaderHomeProps = {
   avatarUrl: string | undefined
+  displayName: string
 }
 
-export function HeaderHome({ avatarUrl }: HeaderHomeProps) {
+export function HeaderHome({ avatarUrl, displayName }: HeaderHomeProps) {
   const { top } = useAppSafeArea()
+
+  const { ProfileInfo } = useProfileInfo()
 
   return (
     <View className="bg-bgColor-800">
@@ -32,7 +37,7 @@ export function HeaderHome({ avatarUrl }: HeaderHomeProps) {
         >
           <View className="flex-col items-left">
             <Text className="text-white text-xl font-500">Olá,</Text>
-            <Text className="text-white text-xl font-bold">Matt</Text>
+            <Text className="text-white text-xl font-bold">{displayName}</Text>
           </View>
 
           <View className="flex-col border-2 rounded-full border-lemon-400 bg-gray-g700">
