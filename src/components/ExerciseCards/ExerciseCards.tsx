@@ -14,7 +14,10 @@ export type ExerciseCardsProps = TouchableOpacityProps & {
   item: {
     imageUrl: ImageSourcePropType | undefined
     title: string
-    description: string
+    resume: string
+    series: number
+    repetitions: number
+    holding: number
   }
 }
 
@@ -39,8 +42,14 @@ export function ExerciseCards({ item, ...rest }: ExerciseCardsProps) {
       />
 
       <View className="flex-1 space-y-2">
-        <Text className="text-white font-700">{item.title}</Text>
-        <Text className="text-white font-400 text-xs">{item.description}</Text>
+        <Text className="text-white font-700 uppercase">{item.title}</Text>
+        <Text className="text-white font-400 text-xs">
+          {item.series > 1 ? `${item.series} séries` : `${item.series} série`}{' '}
+          de{' '}
+          {item.repetitions > 1
+            ? `${item.repetitions} repetições`
+            : `${item.repetitions} repetição`}
+        </Text>
       </View>
 
       <ChevronRight className="text-lemon-300" size={24} />
