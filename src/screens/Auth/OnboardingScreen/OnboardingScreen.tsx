@@ -7,7 +7,7 @@ import { useNavigation } from '@react-navigation/native'
 import { onboarding } from '@utils'
 import AppIntroSlider from 'react-native-app-intro-slider'
 
-import { CustomButton, Onboarding } from '@components'
+import { GreenButton, Onboarding } from '@components'
 import { useResetNavigation } from '@hooks'
 
 export function OnboardingScreen() {
@@ -37,7 +37,7 @@ export function OnboardingScreen() {
       showSkipButton={false}
       renderDoneButton={() => (
         <View className="absolute bottom-40 right-48 w-40">
-          <CustomButton title="Vamos lá" onPress={handleDone} />
+          <GreenButton title="Vamos lá" onPress={handleDone} />
         </View>
       )}
       dotStyle={{ backgroundColor: 'rgba(255, 255, 255, 0.5)' }}
