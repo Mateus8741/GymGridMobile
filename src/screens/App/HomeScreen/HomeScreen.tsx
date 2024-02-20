@@ -17,7 +17,10 @@ export function HomeScreen({ navigation }: AppTabScreenProps<'HomeScreen'>) {
 
   return (
     <>
-      <HeaderHome avatarUrl={ProfileInfo?.avatar_url || undefined} />
+      <HeaderHome
+        avatarUrl={ProfileInfo?.avatar_url || undefined}
+        displayName={ProfileInfo?.display_name || 'Usuário'}
+      />
 
       <Box>
         <View className="flex-1 flex-row flex-wrap justify-between">
