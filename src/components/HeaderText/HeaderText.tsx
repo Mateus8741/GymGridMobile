@@ -42,9 +42,11 @@ export function HeaderText({ title, canGoBack, tag, logout }: HeaderTextProps) {
           {title}
         </Text>
 
-        <Text className="text-lemon-300 text-xs text-center font-700">
-          Treino {tag}
-        </Text>
+        {tag ? (
+          <Text className="text-lemon-300 text-xs text-center font-700">
+            Treino {tag}
+          </Text>
+        ) : null}
       </View>
 
       {logout ? (
