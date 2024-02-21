@@ -10,9 +10,10 @@ type HeaderTextProps = {
   title: string
   logout?: () => void
   canGoBack?: boolean
+  tag?: string
 }
 
-export function HeaderText({ title, canGoBack, logout }: HeaderTextProps) {
+export function HeaderText({ title, canGoBack, tag, logout }: HeaderTextProps) {
   const { colors } = themeExtracted
 
   const { goBack } = useNavigation()
@@ -36,9 +37,15 @@ export function HeaderText({ title, canGoBack, logout }: HeaderTextProps) {
         <View className="w-6 h-6" />
       )}
 
-      <Text className="text-white uppercase text-lg text-center font-700">
-        {title}
-      </Text>
+      <View className="flex-col">
+        <Text className="text-white uppercase text-lg text-center font-700">
+          {title}
+        </Text>
+
+        <Text className="text-lemon-300 text-xs text-center font-700">
+          Treino {tag}
+        </Text>
+      </View>
 
       {logout ? (
         <TouchableOpacity
