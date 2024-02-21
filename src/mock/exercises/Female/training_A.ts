@@ -9,6 +9,7 @@ export const $trainingFA: ExerciseCardsProps[] = [
       series: 1,
       repetitions: 15,
       holding: 0,
+      tag: 'A',
     },
   },
   {
@@ -19,6 +20,7 @@ export const $trainingFA: ExerciseCardsProps[] = [
       series: 3,
       repetitions: 15,
       holding: 0,
+      tag: 'A',
     },
   },
   {
@@ -29,6 +31,7 @@ export const $trainingFA: ExerciseCardsProps[] = [
       series: 3,
       repetitions: 15,
       holding: 0,
+      tag: 'A',
     },
   },
   {
@@ -39,6 +42,7 @@ export const $trainingFA: ExerciseCardsProps[] = [
       series: 3,
       repetitions: 15,
       holding: 0,
+      tag: 'A',
     },
   },
   {
@@ -49,6 +53,7 @@ export const $trainingFA: ExerciseCardsProps[] = [
       series: 3,
       repetitions: 15,
       holding: 0,
+      tag: 'A',
     },
   },
   {
@@ -59,6 +64,7 @@ export const $trainingFA: ExerciseCardsProps[] = [
       series: 3,
       repetitions: 15,
       holding: 0,
+      tag: 'A',
     },
   },
   {
@@ -69,6 +75,7 @@ export const $trainingFA: ExerciseCardsProps[] = [
       series: 3,
       repetitions: 15,
       holding: 0,
+      tag: 'A',
     },
   },
 ]
