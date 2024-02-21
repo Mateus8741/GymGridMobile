@@ -1,10 +1,10 @@
 import { ImageSourcePropType } from 'react-native'
 
 import Arms from '@assets/Icons/arms.png'
-import Inferior from '@assets/Icons/ass.png'
 import Body from '@assets/Icons/body.png'
 import BodyBack from '@assets/Icons/body_back.png'
 import FrontBody from '@assets/Icons/front_body.png'
+import Legs from '@assets/Icons/legs.png'
 
 export type Card = {
   id: number
@@ -30,7 +30,7 @@ export const cardsHomeMale: Card[] = [
     id: 3,
     title: 'Treino C',
     description: 'Pernas Completas',
-    image: Inferior,
+    image: Legs,
   },
   {
     id: 4,
@@ -57,7 +57,7 @@ export const cardsHomeFemale: Card[] = [
     id: 3,
     title: 'Treino C',
     description: 'Tórax, ombro e trícepes',
-    image: Inferior,
+    image: Legs,
   },
   {
     id: 4,
