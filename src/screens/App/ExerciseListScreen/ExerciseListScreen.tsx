@@ -14,9 +14,8 @@ export function ExerciseListScreen({
 
   console.log('card', card.title)
 
-  function goToExerciseDetails() {
-    // navigation.navigate('ExerciseDetailsScreen')
-    console.log('goToExerciseDetails')
+  function goToExerciseDetails(data: ExerciseCardsProps) {
+    navigation.navigate('ExerciseDetailsScreen', { card: data })
   }
 
   function switchBetweenExercises() {
@@ -33,7 +32,12 @@ export function ExerciseListScreen({
   }
 
   function renderItem({ item }: ListRenderItemInfo<ExerciseCardsProps>) {
-    return <ExerciseCards item={item.item} />
+    return (
+      <ExerciseCards
+        item={item.item}
+        onPress={() => goToExerciseDetails(item)}
+      />
+    )
   }
 
   return (
