@@ -14,7 +14,7 @@ export function GreenButton({ title, isLoading, isDisable, ...props }: Props) {
 
   return (
     <reactNative.TouchableOpacity
-      className={`w-full py-3 items-center rounded-md bg-lemon-900`}
+      className={`w-full py-3 items-center rounded-md bg-lemon-300`}
       activeOpacity={0.8}
       disabled={isDisable}
       {...props}
