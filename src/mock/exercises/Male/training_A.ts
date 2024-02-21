@@ -3,9 +3,9 @@ import { ExerciseCardsProps } from '@components'
 export const $trainingMA: ExerciseCardsProps[] = [
   {
     item: {
-      imageUrl: require('@assets/imgs/training_A/agachamento.png'),
-      title: 'Agachamento',
-      resume: 'Aqui será o resumo do exercicio',
+      imageUrl: undefined,
+      title: 'Treino A',
+      resume: 'Aqui será o resumo do exercicio do treino A',
       series: 1,
       repetitions: 15,
       holding: 0,
@@ -14,9 +14,9 @@ export const $trainingMA: ExerciseCardsProps[] = [
   },
   {
     item: {
-      imageUrl: require('@assets/imgs/training_A/leg_press.png'),
-      title: 'Leg Press 45°',
-      resume: 'Aqui será o resumo do exercicio',
+      imageUrl: undefined,
+      title: 'Treino A',
+      resume: 'Aqui será o resumo do exercicio do treino A',
       series: 3,
       repetitions: 15,
       holding: 0,
@@ -25,9 +25,9 @@ export const $trainingMA: ExerciseCardsProps[] = [
   },
   {
     item: {
-      imageUrl: require('@assets/imgs/training_A/hack_machine.png'),
-      title: 'Hack Machine',
-      resume: 'Aqui será o resumo do exercicio',
+      imageUrl: undefined,
+      title: 'Treino A',
+      resume: 'Aqui será o resumo do exercicio do treino A',
       series: 3,
       repetitions: 15,
       holding: 0,
@@ -36,9 +36,9 @@ export const $trainingMA: ExerciseCardsProps[] = [
   },
   {
     item: {
-      imageUrl: require('@assets/imgs/training_A/afundo.png'),
-      title: 'Afundo',
-      resume: 'Aqui será o resumo do exercicio',
+      imageUrl: undefined,
+      title: 'Treino A',
+      resume: 'Aqui será o resumo do exercicio do treino A',
       series: 3,
       repetitions: 15,
       holding: 0,
@@ -47,9 +47,9 @@ export const $trainingMA: ExerciseCardsProps[] = [
   },
   {
     item: {
-      imageUrl: require('@assets/imgs/training_A/cadeira_extensora.png'),
-      title: 'Cadeira Extensora',
-      resume: 'Aqui será o resumo do exercicio',
+      imageUrl: undefined,
+      title: 'Treino A',
+      resume: 'Aqui será o resumo do exercicio do treino A',
       series: 3,
       repetitions: 15,
       holding: 0,
@@ -58,9 +58,9 @@ export const $trainingMA: ExerciseCardsProps[] = [
   },
   {
     item: {
-      imageUrl: require('@assets/imgs/training_A/aducao.png'),
-      title: 'Adução',
-      resume: 'Aqui será o resumo do exercicio',
+      imageUrl: undefined,
+      title: 'Treino A',
+      resume: 'Aqui será o resumo do exercicio do treino A',
       series: 3,
       repetitions: 15,
       holding: 0,
@@ -69,9 +69,9 @@ export const $trainingMA: ExerciseCardsProps[] = [
   },
   {
     item: {
-      imageUrl: require('@assets/imgs/training_A/panturrilha_em_pe.png'),
-      title: 'Panturrilha em pé',
-      resume: 'Aqui será o resumo do exercicio',
+      imageUrl: undefined,
+      title: 'Treino A',
+      resume: 'Aqui será o resumo do exercicio do treino A',
       series: 3,
       repetitions: 15,
       holding: 0,

@@ -3,9 +3,9 @@ import { ExerciseCardsProps } from '@components'
 export const $trainingMD: ExerciseCardsProps[] = [
   {
     item: {
-      imageUrl: require('@assets/imgs/training_A/agachamento.png'),
+      imageUrl: undefined,
       title: 'Teste do treino D',
-      resume: 'Aqui será o resumo do exercicio',
+      resume: 'Aqui será o resumo do exercicio do treino D',
       series: 1,
       repetitions: 15,
       holding: 0,
@@ -14,9 +14,9 @@ export const $trainingMD: ExerciseCardsProps[] = [
   },
   {
     item: {
-      imageUrl: require('@assets/imgs/training_A/leg_press.png'),
+      imageUrl: undefined,
       title: 'Teste do treino D',
-      resume: 'Aqui será o resumo do exercicio',
+      resume: 'Aqui será o resumo do exercicio do treino D',
       series: 3,
       repetitions: 15,
       holding: 0,
@@ -25,9 +25,9 @@ export const $trainingMD: ExerciseCardsProps[] = [
   },
   {
     item: {
-      imageUrl: require('@assets/imgs/training_A/hack_machine.png'),
+      imageUrl: undefined,
       title: 'Teste do treino D',
-      resume: 'Aqui será o resumo do exercicio',
+      resume: 'Aqui será o resumo do exercicio do treino D',
       series: 3,
       repetitions: 15,
       holding: 0,
@@ -36,9 +36,9 @@ export const $trainingMD: ExerciseCardsProps[] = [
   },
   {
     item: {
-      imageUrl: require('@assets/imgs/training_A/afundo.png'),
+      imageUrl: undefined,
       title: 'Teste do treino D',
-      resume: 'Aqui será o resumo do exercicio',
+      resume: 'Aqui será o resumo do exercicio do treino D',
       series: 3,
       repetitions: 15,
       holding: 0,
@@ -47,9 +47,9 @@ export const $trainingMD: ExerciseCardsProps[] = [
   },
   {
     item: {
-      imageUrl: require('@assets/imgs/training_A/cadeira_extensora.png'),
+      imageUrl: undefined,
       title: 'Teste do treino D',
-      resume: 'Aqui será o resumo do exercicio',
+      resume: 'Aqui será o resumo do exercicio do treino D',
       series: 3,
       repetitions: 15,
       holding: 0,
@@ -58,9 +58,9 @@ export const $trainingMD: ExerciseCardsProps[] = [
   },
   {
     item: {
-      imageUrl: require('@assets/imgs/training_A/aducao.png'),
+      imageUrl: undefined,
       title: 'Teste do treino D',
-      resume: 'Aqui será o resumo do exercicio',
+      resume: 'Aqui será o resumo do exercicio do treino D',
       series: 3,
       repetitions: 15,
       holding: 0,
