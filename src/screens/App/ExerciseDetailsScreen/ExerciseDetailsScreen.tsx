@@ -13,7 +13,7 @@ export function ExerciseDetailsScreen({
 
   return (
     <Box>
-      <HeaderText title={card.item.title} canGoBack />
+      <HeaderText title={card.item.title} tag={card.item.tag} canGoBack />
 
       <Text>ExerciseDetailsScreen</Text>
     </Box>
