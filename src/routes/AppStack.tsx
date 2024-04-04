@@ -3,8 +3,10 @@ import React from 'react';
 
 import { NavigatorScreenParams } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Card } from '@utils';
 
-import { ExerciseListScreen } from '@screens';
+import { ExerciseCardsProps } from '@components';
+import { ExerciseDetailsScreen, ExerciseListScreen } from '@screens';
 
 import {
   AppTabBottomTabParamList,
@@ -13,7 +15,8 @@ import {
 
 export type AppStackParamList = {
   AppTabNavigator: NavigatorScreenParams<AppTabBottomTabParamList>;
-  ExerciseListScreen: undefined;
+  ExerciseListScreen: { card: Card }
+  ExerciseDetailsScreen: { card: ExerciseCardsProps };
 };
 
 export function AppStack() {
@@ -28,6 +31,7 @@ export function AppStack() {
       }}>
       <Screen name="AppTabNavigator" component={AppTabNavigator} />
       <Screen name="ExerciseListScreen" component={ExerciseListScreen} />
+      <Screen name="ExerciseDetailsScreen" component={ExerciseDetailsScreen} />
     </Navigator>
   );
 }

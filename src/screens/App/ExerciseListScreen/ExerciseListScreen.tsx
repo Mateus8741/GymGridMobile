@@ -1,12 +1,56 @@
 import React from 'react'
-import { Text } from 'react-native'
+import { FlatList, ListRenderItemInfo } from 'react-native'
 
-import { Box } from '@components'
+import { $trainingMA, $trainingMB, $trainingMC, $trainingMD } from '@mock'
 
-export function ExerciseListScreen() {
+import { Box, ExerciseCards, ExerciseCardsProps, HeaderText } from '@components'
+import { AppScreenProps } from '@routes'
+
+export function ExerciseListScreen({
+  navigation,
+  route,
+}: AppScreenProps<'ExerciseListScreen'>) {
+  const { card } = route.params
+
+  console.log('card', card.title)
+
+  function goToExerciseDetails(data: ExerciseCardsProps) {
+    navigation.navigate('ExerciseDetailsScreen', { card: data })
+  }
+
+  function switchBetweenExercises() {
+    switch (card.title) {
+      case 'Treino A':
+        return $trainingMA
+      case 'Treino B':
+        return $trainingMB
+      case 'Treino C':
+        return $trainingMC
+      case 'Treino D':
+        return $trainingMD
+    }
+  }
+
+  function renderItem({ item }: ListRenderItemInfo<ExerciseCardsProps>) {
+    return (
+      <ExerciseCards
+        item={item.item}
+        onPress={() => goToExerciseDetails(item)}
+      />
+    )
+  }
+
   return (
     <Box>
-      <Text>ExerciseListScreen</Text>
+      <HeaderText title={card.title} canGoBack />
+
+      <FlatList
+        data={switchBetweenExercises()}
+        keyExtractor={(item, index) => String(index)}
+        renderItem={renderItem}
+        showsVerticalScrollIndicator={false}
+        className="mt-6"
+      />
     </Box>
   )
 }

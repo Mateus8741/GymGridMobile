@@ -2,13 +2,33 @@ import React from 'react'
 import { ImageBackground, StyleSheet, Text, View } from 'react-native'
 
 import BG from '@assets/imgs/Onboarding-3.png'
-import { EyeIcon } from 'lucide-react-native'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { LoginScheema, loginScheema } from '@schemas'
+import { useForm } from 'react-hook-form'
 
-import { Box, CustomButton, TextInput } from '@components'
-import { themeExtracted } from '@theme'
+import { Box, FormPasswordInput, FormTextInput, GreenButton } from '@components'
 
 export function LoginScreen() {
-  const { colors } = themeExtracted
+  const { control, handleSubmit, watch } = useForm<LoginScheema>({
+    resolver: zodResolver(loginScheema),
+
+    defaultValues: {
+      email: '',
+      password: '',
+    },
+
+    mode: 'onChange',
+  })
+
+  const email = watch('email')
+  const password = watch('password')
+
+  // const { signIn, isPending } = useSignIn({ email, password }) FIXME: remove this
+
+  function useHandleLogin() {
+    // signIn()
+    console.log('signIn', email, password)
+  }
 
   return (
     <Box>
@@ -27,25 +47,29 @@ export function LoginScreen() {
             Acesse sua conta
           </Text>
 
-          <TextInput placeholder="Nome" />
+          <FormTextInput
+            control={control}
+            name="email"
+            placeholder="E-mail"
+            keyboardType="email-address"
+          />
 
           <View className="h-5" />
 
-          <TextInput
+          <FormPasswordInput
+            control={control}
+            name="password"
             placeholder="Senha"
-            rightComponent={
-              <EyeIcon
-                size={24}
-                fill={colors.gray.g100}
-                color={colors.gray.g900}
-              />
-            }
           />
         </View>
 
         <View className="pb-7" />
 
-        <CustomButton title="Entrar" />
+        <GreenButton
+          title="Entrar"
+          onPress={handleSubmit(useHandleLogin)}
+          // isLoading
+        />
       </ImageBackground>
     </Box>
   )
