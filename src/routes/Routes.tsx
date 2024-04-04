@@ -7,7 +7,7 @@ import { AuthStack } from './AuthStack'
 
 export function Routes() {
   // const { user } = useUserStorage()
-  const user = true
+  const user = false
 
   return (
     <NavigationContainer>
