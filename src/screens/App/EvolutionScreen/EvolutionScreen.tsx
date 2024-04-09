@@ -40,10 +40,7 @@ export function EvolutionScreen() {
           data={monthsUntilCurrent}
           keyExtractor={(item) => String(item)}
           renderItem={({ item }) => (
-            <Graphic
-              month={item}
-              progress={Number(Evolution?.current_weight)}
-            />
+            <Graphic month={item} weight={Number(Evolution?.current_weight)} />
           )}
           showsVerticalScrollIndicator={false}
         />

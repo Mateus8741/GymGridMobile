@@ -7,17 +7,17 @@ import { themeExtracted } from '@theme'
 
 type GraphicProps = {
   month: string
-  progress: number
+  weight: number
 }
 
-export function Graphic({ progress, month }: GraphicProps) {
+export function Graphic({ weight, month }: GraphicProps) {
   const { colors } = themeExtracted
 
   const textStyle =
     isCurrentMonth === month ? 'text-lemon-300' : 'text-gray-g200'
 
   return (
-    progress > 0 && (
+    weight > 0 && (
       <View className="flex-row mb-4">
         <Text className={`${textStyle} text-xs`}>{month.slice(0, 3)}</Text>
 
@@ -27,7 +27,7 @@ export function Graphic({ progress, month }: GraphicProps) {
               <View
                 className={`h-4 rounded-full`}
                 style={{
-                  width: `${progress}%`,
+                  width: `${weight}%`,
                   backgroundColor:
                     isCurrentMonth === month
                       ? colors.lemon[900]
@@ -35,7 +35,7 @@ export function Graphic({ progress, month }: GraphicProps) {
                 }}
               />
             </View>
-            <Text className={`${textStyle} text-xs`}>{progress}kg</Text>
+            <Text className={`${textStyle} text-xs`}>{weight}kg</Text>
           </View>
         </View>
       </View>
