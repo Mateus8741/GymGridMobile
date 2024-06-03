@@ -1,7 +1,6 @@
 import React from 'react'
 import { ImageBackground, StyleSheet, Text, View } from 'react-native'
 
-import { useSignIn } from '@api'
 import BG from '@assets/imgs/Onboarding-3.png'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { LoginScheema, loginScheema } from '@schemas'
@@ -24,10 +23,7 @@ export function LoginScreen() {
   const email = watch('email')
   const password = watch('password')
 
-  const { signIn, isPending } = useSignIn({ email, password })
-
   function useHandleLogin() {
-    signIn()
     console.log('signIn', email, password)
   }
 
@@ -69,7 +65,7 @@ export function LoginScreen() {
         <GreenButton
           title="Entrar"
           onPress={handleSubmit(useHandleLogin)}
-          isLoading={isPending}
+          // isLoading={isPending}
         />
       </ImageBackground>
     </Box>

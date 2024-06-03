@@ -1,15 +1,12 @@
 import React from 'react'
 import { View } from 'react-native'
 
-import { useProfileInfo } from '@api'
 import { Card, cardsHomeMale } from '@utils'
 
 import { Box, Cards, HeaderHome } from '@components'
 import { AppTabScreenProps } from '@routes'
 
 export function HomeScreen({ navigation }: AppTabScreenProps<'HomeScreen'>) {
-  const { ProfileInfo } = useProfileInfo()
-
   function goToExercises(card: Card) {
     console.log('Go to exercises', card)
     navigation.navigate('ExerciseListScreen', { card })
@@ -18,8 +15,8 @@ export function HomeScreen({ navigation }: AppTabScreenProps<'HomeScreen'>) {
   return (
     <>
       <HeaderHome
-        avatarUrl={ProfileInfo?.avatar_url || undefined}
-        displayName={ProfileInfo?.display_name || 'Usuário'}
+        avatarUrl="https://avatars.githubusercontent.com/u/39461509?v=4"
+        displayName="Mateus Tavares"
       />
 
       <Box>

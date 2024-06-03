@@ -1,8 +1,6 @@
 import React from 'react'
 import { Text, View } from 'react-native'
 
-import { uploadProfilePicture, useProfileInfo, useSignOut } from '@api'
-
 import {
   Box,
   DarkButton,
@@ -15,16 +13,16 @@ import { useAppSafeArea } from '@hooks'
 export function ProfileScreen() {
   const { bottom } = useAppSafeArea()
 
-  const { signOut } = useSignOut()
-
-  const { ProfileInfo } = useProfileInfo()
-
   function goToObjective() {
     console.log('goToObjective')
   }
 
   function handleSignOut() {
-    signOut()
+    console.log('SignOut')
+  }
+
+  function uploadProfilePicture() {
+    console.log('uploadProfilePicture')
   }
 
   return (
@@ -33,12 +31,8 @@ export function ProfileScreen() {
 
       <View className="items-center mt-4">
         <ProfilePicture
-          avatarUrl={ProfileInfo?.avatar_url || undefined}
-          onPress={() =>
-            uploadProfilePicture({
-              profileId: ProfileInfo?.id.toString() || '',
-            })
-          }
+          avatarUrl="https://avatars.githubusercontent.com/u/39461509?v=4"
+          onPress={uploadProfilePicture}
         />
       </View>
 
@@ -47,16 +41,12 @@ export function ProfileScreen() {
           Dados pessoais
         </Text>
 
-        <TextInput
-          placeholder="Nome"
-          value={ProfileInfo?.display_name?.toString()}
-          editable={false}
-        />
+        <TextInput placeholder="Nome" value="Mateus Tavares" editable={false} />
 
         <View className="flex-row ">
           <TextInput
             placeholder="Idade"
-            value={ProfileInfo?.age?.toString()}
+            value="25"
             editable={false}
             keyboardType="number-pad"
             moreClassName="flex-1"
@@ -64,7 +54,7 @@ export function ProfileScreen() {
 
           <TextInput
             placeholder="Altura"
-            value={ProfileInfo?.height?.toString()}
+            value="1.75"
             editable={false}
             keyboardType="number-pad"
             moreClassName="flex-1 mx-3"
@@ -72,18 +62,14 @@ export function ProfileScreen() {
 
           <TextInput
             placeholder="Peso"
-            value={ProfileInfo?.weight?.toString()}
+            value="89"
             editable={false}
             keyboardType="number-pad"
             moreClassName="flex-1"
           />
         </View>
 
-        <TextInput
-          placeholder="Sexo"
-          value={ProfileInfo?.gender?.toString()}
-          editable={false}
-        />
+        <TextInput placeholder="Sexo" value="Masculino" editable={false} />
 
         <Text className="text-white text-lg font-bold my-4">Objetivo</Text>
 

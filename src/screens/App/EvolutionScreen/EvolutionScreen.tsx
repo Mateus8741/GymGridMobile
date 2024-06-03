@@ -1,24 +1,12 @@
 import React from 'react'
 import { Text, View } from 'react-native'
 
-import { useEvolution } from '@api'
 import { monthsUntilCurrent } from '@utils'
 import { FlatList } from 'react-native-gesture-handler'
 
 import { Box, EvolutionMonthList, Graphic, HeaderText } from '@components'
 
 export function EvolutionScreen() {
-  const { Evolution } = useEvolution()
-
-  const formatedTime = new Date(Evolution?.updated_at || '').toLocaleDateString(
-    'pt-BR',
-    {
-      day: '2-digit',
-      month: 'long',
-      year: 'numeric',
-    },
-  )
-
   return (
     <>
       <Box>
@@ -32,7 +20,7 @@ export function EvolutionScreen() {
           </Text>
 
           <Text className="text-white text-xs text-left font-700">
-            {formatedTime}
+            15/09/2021
           </Text>
         </View>
 
@@ -40,7 +28,7 @@ export function EvolutionScreen() {
           data={monthsUntilCurrent}
           keyExtractor={(item) => String(item)}
           renderItem={({ item }) => (
-            <Graphic month={item} weight={Number(Evolution?.current_weight)} />
+            <Graphic month={item} weight={Math.random() * 100} />
           )}
           showsVerticalScrollIndicator={false}
         />
@@ -54,7 +42,7 @@ export function EvolutionScreen() {
             <View className="flex-row justify-between">
               <Text className="text-white text-md font-500">Peso atual</Text>
               <Text className="text-white text-md font-500">
-                {Evolution?.current_weight} kg
+                {Math.random() * 100} kg
               </Text>
             </View>
 
@@ -62,7 +50,7 @@ export function EvolutionScreen() {
               <Text className="text-white text-md font-500">Ombro</Text>
 
               <Text className="text-white text-md font-500">
-                {Evolution?.shoulders}
+                {Math.random() * 100} cm
               </Text>
             </View>
 
@@ -70,7 +58,7 @@ export function EvolutionScreen() {
               <Text className="text-white text-md font-500">Peitoral</Text>
 
               <Text className="text-white text-md font-500">
-                {Evolution?.breastplate}
+                {Math.random() * 100} cm
               </Text>
             </View>
 
@@ -78,7 +66,7 @@ export function EvolutionScreen() {
               <Text className="text-white text-md font-500">Braço (D)</Text>
 
               <Text className="text-white text-md font-500">
-                {Evolution?.arm_r}
+                {Math.random() * 100} cm
               </Text>
             </View>
 
@@ -86,7 +74,7 @@ export function EvolutionScreen() {
               <Text className="text-white text-md font-500">Braço (E)</Text>
 
               <Text className="text-white text-md font-500">
-                {Evolution?.arm_l}
+                {Math.random() * 100} cm
               </Text>
             </View>
 
@@ -94,7 +82,7 @@ export function EvolutionScreen() {
               <Text className="text-white text-md font-500">Antebraço (D)</Text>
 
               <Text className="text-white text-md font-500">
-                {Evolution?.forearm_r}
+                {Math.random() * 100} cm
               </Text>
             </View>
 
@@ -102,7 +90,7 @@ export function EvolutionScreen() {
               <Text className="text-white text-md font-500">Antebraço (E)</Text>
 
               <Text className="text-white text-md font-500">
-                {Evolution?.forearm_l}
+                {Math.random() * 100} cm
               </Text>
             </View>
           </View>
