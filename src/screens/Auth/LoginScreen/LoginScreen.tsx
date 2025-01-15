@@ -7,8 +7,9 @@ import { LoginScheema, loginScheema } from '@schemas'
 import { useForm } from 'react-hook-form'
 
 import { Box, FormPasswordInput, FormTextInput, GreenButton } from '@components'
+import { AuthScreenProps } from '@routes'
 
-export function LoginScreen() {
+export function LoginScreen({ navigation }: AuthScreenProps<'LoginScreen'>) {
   const { control, handleSubmit, watch } = useForm<LoginScheema>({
     resolver: zodResolver(loginScheema),
 
@@ -25,6 +26,8 @@ export function LoginScreen() {
 
   function useHandleLogin() {
     console.log('signIn', email, password)
+
+    // navigation.navigate('HomeScreen')
   }
 
   return (
