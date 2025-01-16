@@ -1,13 +1,13 @@
 import React from 'react'
 import { View } from 'react-native'
 
-import { Card, cardsHomeMale } from '@utils'
+import { CardProps, cardsHomeMale } from '@utils'
 
 import { Box, Cards, HeaderHome } from '@components'
 import { AppTabScreenProps } from '@routes'
 
 export function HomeScreen({ navigation }: AppTabScreenProps<'HomeScreen'>) {
-  function goToExercises(card: Card) {
+  function goToExercises(card: CardProps) {
     console.log('Go to exercises', card)
     navigation.navigate('ExerciseListScreen', { card })
   }

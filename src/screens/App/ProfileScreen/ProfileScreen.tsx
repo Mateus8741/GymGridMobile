@@ -33,6 +33,7 @@ export function ProfileScreen() {
         <ProfilePicture
           avatarUrl="https://avatars.githubusercontent.com/u/39461509?v=4"
           onPress={uploadProfilePicture}
+          className="transition-transform transform hover:scale-105"
         />
       </View>
 

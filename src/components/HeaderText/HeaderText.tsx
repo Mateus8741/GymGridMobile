@@ -30,6 +30,7 @@ export function HeaderText({ title, canGoBack, tag, logout }: HeaderTextProps) {
         <TouchableOpacity
           className="w-6 h-6 rounded-md items-center justify-center"
           onPress={handleGoBack}
+          activeOpacity={0.7}
         >
           <ChevronLeft size={24} color={colors.lemon[300]} />
         </TouchableOpacity>

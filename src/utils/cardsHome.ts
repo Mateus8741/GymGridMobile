@@ -6,14 +6,14 @@ import BodyBack from '@assets/Icons/body_back.png'
 import FrontBody from '@assets/Icons/front_body.png'
 import Legs from '@assets/Icons/legs.png'
 
-export type Card = {
+export type CardProps = {
   id: number
   image: ImageSourcePropType
   title: string
   description: string
 }
 
-export const cardsHomeMale: Card[] = [
+export const cardsHomeMale: CardProps[] = [
   {
     id: 1,
     title: 'Treino A',
@@ -40,7 +40,7 @@ export const cardsHomeMale: Card[] = [
   },
 ]
 
-export const cardsHomeFemale: Card[] = [
+export const cardsHomeFemale: CardProps[] = [
   {
     id: 1,
     title: 'Treino A',

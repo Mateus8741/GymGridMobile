@@ -39,7 +39,10 @@ export function LoginScreen({ navigation }: AuthScreenProps<'LoginScreen'>) {
         className="flex-1 justify-center px-5 py-10"
       >
         <View className="flex-grow justify-center">
-          <Text className="text-3xl font-700 text-white text-left mb-3">
+          <Text
+            className="text-3xl font-700 text-white text-left mb-3"
+            accessibilityRole="header"
+          >
             Faça login e aproveite seu treino
           </Text>
 
